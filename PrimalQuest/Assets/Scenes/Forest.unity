@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 385626346}
   m_Layer: 0
   m_Name: PLayer(Temp_For_Testing)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3558,6 +3558,7 @@ GameObject:
   - component: {fileID: 1723100639}
   - component: {fileID: 1723100638}
   - component: {fileID: 1723100637}
+  - component: {fileID: 1723100641}
   m_Layer: 0
   m_Name: CityTrigger
   m_TagString: Untagged
@@ -3572,7 +3573,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723100636}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3632,6 +3633,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 55.134003, z: 0}
+--- !u!114 &1723100641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723100636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c90871430485a4409ed3d69633916e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1754864065
 Prefab:
   m_ObjectHideFlags: 0

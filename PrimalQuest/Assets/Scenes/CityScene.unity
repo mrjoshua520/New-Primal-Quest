@@ -28067,7 +28067,7 @@ GameObject:
   - component: {fileID: 931270642}
   m_Layer: 0
   m_Name: PLayer(Temp_For_Testing)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34442,6 +34442,7 @@ GameObject:
   - component: {fileID: 1017681016}
   - component: {fileID: 1017681015}
   - component: {fileID: 1017681014}
+  - component: {fileID: 1017681018}
   m_Layer: 0
   m_Name: ForestTrigger
   m_TagString: Untagged
@@ -34456,8 +34457,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1017681013}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -34516,6 +34517,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: -24.167002, z: 0}
+--- !u!114 &1017681018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017681013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31024d592662aee4098d00f9e9ac3895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1028728582
 GameObject:
   m_ObjectHideFlags: 0
@@ -68227,6 +68239,7 @@ GameObject:
   - component: {fileID: 1434050544}
   - component: {fileID: 1434050543}
   - component: {fileID: 1434050542}
+  - component: {fileID: 1434050546}
   m_Layer: 0
   m_Name: CaveTrigger
   m_TagString: Untagged
@@ -68241,8 +68254,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1434050541}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -68301,6 +68314,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: -101.452995, y: -192.573, z: 172.004}
+--- !u!114 &1434050546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1434050541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e401e87ea51c74ab98faec9cbf5072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435104931
 GameObject:
   m_ObjectHideFlags: 0
@@ -95219,8 +95243,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075320576}
-  m_LocalRotation: {x: -0.037228823, y: -0.69953936, z: 0.036541577, w: -0.7126875}
-  m_LocalPosition: {x: -28.075571, y: 9.807301, z: -104.464905}
+  m_LocalRotation: {x: -0.00071145553, y: 0.99362123, z: 0.006278628, w: 0.112592064}
+  m_LocalPosition: {x: -175.69225, y: 5.193915, z: -102.86831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}
