@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: f6a130a287f377649a1ac85706e971ea
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: BasicBandit_Body
+    100004: BasicBandit_Clothes
+    100006: BasicBandit_Eye
+    100008: BasicBandit_Mask
+    100010: //RootNode
+    100012: Chest
+    100014: Eye_L
+    100016: Eye_R
+    100018: Foot_L
+    100020: Foot_R
+    100022: Hand_L
+    100024: Hand_R
+    100026: Head
+    100028: Hips
+    100030: IndexDistal_L
+    100032: IndexDistal_R
+    100034: IndexMiddle_L
+    100036: IndexMiddle_R
+    100038: IndexProximal_L
+    100040: IndexProximal_R
+    100042: Jaw
+    100044: LittleDistal_L
+    100046: LittleDistal_R
+    100048: LittleMiddle_L
+    100050: LittleMiddle_R
+    100052: LittleProximal_L
+    100054: LittleProximal_R
+    100056: LowerArm_L
+    100058: LowerArm_R
+    100060: LowerLeg_L
+    100062: LowerLeg_R
+    100064: MiddleDistal_L
+    100066: MiddleDistal_R
+    100068: MiddleMiddle_L
+    100070: MiddleMiddle_R
+    100072: MiddleProximal_L
+    100074: MiddleProximal_R
+    100076: Neck
+    100078: RingDistal_L
+    100080: RingDistal_R
+    100082: RingMiddle_L
+    100084: RingMiddle_R
+    100086: RingProximal_L
+    100088: RingProximal_R
+    100090: Shoulder_L
+    100092: Shoulder_R
+    100094: Spine
+    100096: ThumbDistal_L
+    100098: ThumbDistal_R
+    100100: ThumbMiddle_L
+    100102: ThumbMiddle_R
+    100104: ThumbProximal_L
+    100106: ThumbProximal_R
+    100108: Toe_L
+    100110: Toe_R
+    100112: UpperArm_L
+    100114: UpperArm_R
+    100116: UpperLeg_L
+    100118: UpperLeg_R
+    400000: Armature
+    400002: BasicBandit_Body
+    400004: BasicBandit_Clothes
+    400006: BasicBandit_Eye
+    400008: BasicBandit_Mask
+    400010: //RootNode
+    400012: Chest
+    400014: Eye_L
+    400016: Eye_R
+    400018: Foot_L
+    400020: Foot_R
+    400022: Hand_L
+    400024: Hand_R
+    400026: Head
+    400028: Hips
+    400030: IndexDistal_L
+    400032: IndexDistal_R
+    400034: IndexMiddle_L
+    400036: IndexMiddle_R
+    400038: IndexProximal_L
+    400040: IndexProximal_R
+    400042: Jaw
+    400044: LittleDistal_L
+    400046: LittleDistal_R
+    400048: LittleMiddle_L
+    400050: LittleMiddle_R
+    400052: LittleProximal_L
+    400054: LittleProximal_R
+    400056: LowerArm_L
+    400058: LowerArm_R
+    400060: LowerLeg_L
+    400062: LowerLeg_R
+    400064: MiddleDistal_L
+    400066: MiddleDistal_R
+    400068: MiddleMiddle_L
+    400070: MiddleMiddle_R
+    400072: MiddleProximal_L
+    400074: MiddleProximal_R
+    400076: Neck
+    400078: RingDistal_L
+    400080: RingDistal_R
+    400082: RingMiddle_L
+    400084: RingMiddle_R
+    400086: RingProximal_L
+    400088: RingProximal_R
+    400090: Shoulder_L
+    400092: Shoulder_R
+    400094: Spine
+    400096: ThumbDistal_L
+    400098: ThumbDistal_R
+    400100: ThumbMiddle_L
+    400102: ThumbMiddle_R
+    400104: ThumbProximal_L
+    400106: ThumbProximal_R
+    400108: Toe_L
+    400110: Toe_R
+    400112: UpperArm_L
+    400114: UpperArm_R
+    400116: UpperLeg_L
+    400118: UpperLeg_R
+    2100000: BasicBandit_Cloth
+    2100002: BasicBandit_EyeMAt
+    2100004: BasicBandit_Body
+    2100006: BasicBandit_Body__HeroeBomerLvl2_bmp
+    4300000: BasicBandit_Mask
+    4300002: BasicBandit_Eye
+    4300004: BasicBandit_Body
+    4300006: BasicBandit_Clothes
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: BasicBandit_Body
+    13700002: BasicBandit_Clothes
+    13700004: BasicBandit_Eye
+    13700006: BasicBandit_Mask
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
