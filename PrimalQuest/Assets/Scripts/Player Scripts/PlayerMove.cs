@@ -1,68 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Temp
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float movementSpeed = 4;
-    private float tempMovementSpeed;
-    Animator anim;
-    [SerializeField] private AnimationCurve jumpFallOff;
-    public float jumpMultiplier = 15;
-    public KeyCode jumpKey;
+    MageStats player;
     CharacterController charControl;
-    Vector3 moveDirForward;
-    Vector3 moveDirSide;
-    private bool isJumping;
+    Vector3 move = Vector3.zero;
+    float gravity = 30f;
 
     // Use this for initialization
     void Start ()
     {
+        player = new MageStats();
         charControl = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float h = Input.GetAxis("Horizontal") * movementSpeed;
-        float v = Input.GetAxis("Vertical") * movementSpeed;
-        MovePlayer(h, v);
+        MovePlayer();
+        TestingSpell();
+        TempToIsland();
 	}
 
-    void MovePlayer(float Horiz, float Vert)
+    void MovePlayer()
     {
+        if (charControl.isGrounded)
+        {
+            move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            move = transform.TransformDirection(move);
+            move *= player.GetSpeed();
 
-            moveDirSide = transform.right * Horiz;
-            moveDirForward = transform.forward * Vert;
+            if (Input.GetButtonDown("Jump"))
+            {
+                move.y = player.GetJump();
+            }
+        }
 
-        tempMovementSpeed /= 2;
+        move.y -= gravity * Time.deltaTime;
 
-        charControl.SimpleMove(moveDirSide + moveDirForward);
-
-        JumpInput();
+        charControl.Move(move * Time.deltaTime);
     }
 
-    void JumpInput()
+    void TestingSpell()
     {
-        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        if (Input.GetButtonDown("Fire2"))
         {
-            isJumping = true;
-            StartCoroutine(JumpEvent());
+            player.ChangeJump(30f);
+            player.ChangeSpeed(30f);
         }
     }
 
-    private IEnumerator JumpEvent()
+    void TempToIsland()
     {
-        float airTime = 0;
-        do
-        {
-            float jumpForce = jumpFallOff.Evaluate(airTime);
-            charControl.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
-            airTime += Time.deltaTime;
-            yield return null;
-        } while (!charControl.isGrounded && charControl.collisionFlags != CollisionFlags.Above);
+        GameObject player1;
+        Vector3 loadpos;
 
-        isJumping = false;
+        if (Input.GetButtonDown("Fire3"))
+        {
+            player1 = GameObject.FindWithTag("Player");
+            DontDestroyOnLoad(player1);
+            SceneManager.LoadScene(3);
+            loadpos = new Vector3(202f, 9f, 567f);
+            player1.transform.position = loadpos;
+        }
     }
 }
