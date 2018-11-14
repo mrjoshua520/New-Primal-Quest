@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
-{   // to use functions from movement do this:
-    // public NPCMovement npcMovement;
-    // in Update
-    // if(!npcMovement.isWaiting)
-    // {
-    //    call functions from NPCMovement
-    // }  
-    
-
+{   
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
 
-    int range = 4;
+    public int range = 5;
+    public int accuracy;
+    public int timetoPause;
 
-    public NPCMovement npcMovement;
+    public bool walkSetPath;
+    public bool wander;
+    public bool willChasePlayer;
    
+    public NPCMovement npcMovement;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -32,10 +30,30 @@ public class EnemyAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(Vector3.Distance(player.transform.position, this.transform.position) < range)
+        if (!npcMovement.isWaiting)
         {
-            npcMovement.SetTarget(agent, anim, player);
-            range = 100;
-        }        
+            if (willChasePlayer)
+            {
+                if (Vector3.Distance(player.transform.position, this.transform.position) < range)
+                {
+                    npcMovement.SetTarget(agent, anim, player);
+                }
+            }
+
+            else if (walkSetPath && !wander)
+            {
+                npcMovement.SetPath(agent, anim, accuracy, timetoPause);
+            }
+
+            else if (wander && !walkSetPath)
+            {
+                npcMovement.Wander(agent, anim, accuracy, timetoPause);
+            }
+
+            else if (wander && walkSetPath)
+            {
+                Debug.LogError("Please check either walksetpath or wander you cannot check both;");
+            }
+        }
     }
 }
