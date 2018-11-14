@@ -31,7 +31,7 @@ public class Portal_Summon : MonoBehaviour {
         yield return new WaitForSeconds(7f);
 
         DontDestroyOnLoad(Player);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
         loadpos = new Vector3(97f, 106f, 171f);
         Player.transform.position = loadpos;
     }

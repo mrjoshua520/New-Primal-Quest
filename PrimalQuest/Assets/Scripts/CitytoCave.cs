@@ -14,7 +14,7 @@ public class CitytoCave : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
             DontDestroyOnLoad(player);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
             loadpos = new Vector3(-78.5f, 1.5f, -108f);
             player.transform.position = loadpos;
         }

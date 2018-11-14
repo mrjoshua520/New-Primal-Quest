@@ -17,7 +17,7 @@ public class CitytoForest : MonoBehaviour
             DontDestroyOnLoad(player);
             loadpos = new Vector3(239f, 2f, 230f);
             player.transform.position = loadpos;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }

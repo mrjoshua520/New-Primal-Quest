@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
         {
             player1 = GameObject.FindWithTag("Player");
             DontDestroyOnLoad(player1);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
             loadpos = new Vector3(202f, 9f, 567f);
             player1.transform.position = loadpos;
         }

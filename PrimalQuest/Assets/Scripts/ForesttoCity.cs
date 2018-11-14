@@ -15,7 +15,7 @@ public class ForesttoCity : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
             DontDestroyOnLoad(player);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             loadpos = new Vector3(15f, 20f, 34f);
             player.transform.position = loadpos;
         }
