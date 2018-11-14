@@ -647,7 +647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7f87c9ec12be74caa3a2466fc2ba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   portal: {fileID: 1416422116}
 --- !u!135 &67556439
 SphereCollider:
@@ -18299,8 +18298,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1369877532}
-  m_LocalRotation: {x: -0.1483187, y: 0.13748325, z: 0.020827869, w: 0.979115}
-  m_LocalPosition: {x: -123.10767, y: -694.7113, z: -132.07211}
+  m_LocalRotation: {x: -0.098101445, y: 0.38982943, z: 0.041813288, w: 0.9146917}
+  m_LocalPosition: {x: -119.815, y: -163.7518, z: -4.836241}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938415183}

@@ -28,13 +28,11 @@ public class Portal_Summon : MonoBehaviour {
     {
         Player = GameObject.FindWithTag("Player");
 
-        Player.transform.LookAt(portal.transform);
-
         yield return new WaitForSeconds(7f);
 
         DontDestroyOnLoad(Player);
         SceneManager.LoadScene(4);
-        loadpos = new Vector3(15f, 20f, 34f);
+        loadpos = new Vector3(97f, 106f, 171f);
         Player.transform.position = loadpos;
     }
 }

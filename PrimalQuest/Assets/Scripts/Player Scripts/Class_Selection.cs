@@ -6,16 +6,18 @@ using UnityEngine.SceneManagement;
 public class Class_Selection : MonoBehaviour
 {
     GameObject player;
-    //public GameObject mage;
+    public GameObject mage;
     //public GameObject archer;
     //public GameObject warrior;
     Vector3 loadpos;
     
     public void Archer()
     {
-        player = GameObject.Find("Archer");
+        mage.SetActive(true);
+        //archer.SetActive(true);
+        //warrior.SetActive(true);
 
-        player.SetActive(true);
+        player = GameObject.Find("Archer");
 
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(0);
@@ -25,9 +27,11 @@ public class Class_Selection : MonoBehaviour
 
     public void Mage()
     {
-        player = GameObject.Find("Mage");
+        mage.SetActive(true);
+        //archer.SetActive(true);
+        //warrior.SetActive(true);
 
-        player.SetActive(true);
+        player = GameObject.Find("Mage");
 
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(0);
@@ -37,9 +41,11 @@ public class Class_Selection : MonoBehaviour
 
     public void Warrior()
     {
-        player = GameObject.Find("Warrior");
+        mage.SetActive(true);
+        //archer.SetActive(true);
+        //warrior.SetActive(true);
 
-        player.SetActive(true);
+        player = GameObject.Find("Warrior");
 
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(0);
