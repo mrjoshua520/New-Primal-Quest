@@ -6,6 +6,13 @@ public class SpellScript : MonoBehaviour
 {
 
     public GameObject weapon;
+    Animator anim;
+    bool isAttacking = false;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -16,11 +23,14 @@ public class SpellScript : MonoBehaviour
     }
 
     IEnumerator FireSpell()
-    {
-        weapon.SetActive(true);
+    { 
+        if (!isAttacking)
+        {
+            anim.SetBool("isAttack", true);
 
-        yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
 
-        weapon.SetActive(false);
+            anim.SetBool("isAttack", false);
+        }
     }
 }
