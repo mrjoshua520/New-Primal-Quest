@@ -5,38 +5,26 @@ using UnityEngine;
 public class DoorAnimations : MonoBehaviour
 {
 
-    Vector3 player;
-    Vector3 bigHouseDoor;
     Animator anim;
-   // Vector3 alchemyDoor;
-    //Vector3 blacksmithDoor;
-
+  
 	// Use this for initialization
 	void Start ()
     {
-        bigHouseDoor = GameObject.Find("BigHouseDoor1").transform.position;
         anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform.position;
 
-        checkDistanceToOpen();
-        
-	}
-
-    void checkDistanceToOpen()
+    private void OnTriggerEnter(Collider other)
     {
-        if (Vector3.Distance(player, bigHouseDoor) < 100)
+        if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                anim.SetBool("open", true);
-            }
-
-            anim.SetBool("open", false);
+            StartCoroutine(DoorDelay());
         }
+    }
+
+    IEnumerator DoorDelay()
+    {
+        anim.SetBool("open", true);
+        yield return new WaitForSeconds(3);
+        anim.SetBool("open", false);
     }
 }
