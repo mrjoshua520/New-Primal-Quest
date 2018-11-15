@@ -40,14 +40,14 @@ public class EnemyAI : MonoBehaviour
                 }
             }
 
-            else if (walkSetPath && !wander)
+            if (walkSetPath && !wander)
             {
-                npcMovement.SetPath(agent, anim, accuracy, timetoPause);
+               StartCoroutine(npcMovement.SetPath(agent, anim, accuracy, timetoPause));
             }
 
-            else if (wander && !walkSetPath)
+            if (wander && !walkSetPath)
             {
-                npcMovement.Wander(agent, anim, accuracy, timetoPause);
+                StartCoroutine(npcMovement.Wander(agent, anim, accuracy, timetoPause));
             }
 
             else if (wander && walkSetPath)

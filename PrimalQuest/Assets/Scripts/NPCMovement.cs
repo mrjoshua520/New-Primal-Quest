@@ -20,7 +20,7 @@ public class NPCMovement
     }
  
     public IEnumerator SetPath(NavMeshAgent agent, Animator anim, float turnDistance, float waitTime)
-    {            
+    {     
         if (Vector3.Distance(waypoints[currentDestination].transform.position, agent.transform.position) <= turnDistance)
         {
            
