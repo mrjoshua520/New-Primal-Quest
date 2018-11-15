@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUps
+  - WeaponAtDisplay
+  - Concrete
+  - Generic
+  - Enemy
   layers:
   - Default
   - TransparentFX
