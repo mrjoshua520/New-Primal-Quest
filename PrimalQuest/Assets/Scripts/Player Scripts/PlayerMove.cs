@@ -12,19 +12,19 @@ public class PlayerMove : MonoBehaviour
     float gravity = 30f;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         player = new MageStats();
         charControl = GetComponent<CharacterController>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         MovePlayer();
         TestingSpell();
         TempToIsland();
-	}
+    }
 
     void MovePlayer()
     {

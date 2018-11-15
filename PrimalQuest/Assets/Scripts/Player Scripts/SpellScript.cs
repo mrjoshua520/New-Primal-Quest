@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpellScript : MonoBehaviour
 {
 
-    public GameObject weapon;
     Animator anim;
     bool isAttacking = false;
 
@@ -16,21 +15,20 @@ public class SpellScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && isAttacking == false)
         {
-            StartCoroutine(FireSpell());
+            isAttacking = true;
+            StartCoroutine(Fire());
+            isAttacking = false;
         }
     }
 
-    IEnumerator FireSpell()
-    { 
-        if (!isAttacking)
-        {
-            anim.SetBool("isAttack", true);
+    IEnumerator Fire()
+    {
+        anim.SetBool("isAttack", true);
 
-            yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
 
-            anim.SetBool("isAttack", false);
-        }
+        anim.SetBool("isAttack", false);
     }
 }
