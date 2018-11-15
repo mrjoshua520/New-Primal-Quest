@@ -30,22 +30,40 @@ public class EnemyAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (!npcMovement.isWaiting)
+        if (willChasePlayer)
         {
-            if (willChasePlayer)
+            if (Vector3.Distance(player.transform.position, transform.position) <= range)
             {
-                if (Vector3.Distance(player.transform.position, this.transform.position) < range)
+                if (wander)
                 {
+                    wander = false;
                     npcMovement.SetTarget(agent, anim, player);
+                    if (Vector3.Distance(player.transform.position, transform.position) > range)
+                    {
+                        wander = true;
+                    }
+                }
+
+                else if (walkSetPath)
+                {
+                    walkSetPath = false;
+                    npcMovement.SetTarget(agent, anim, player);
+                    if (Vector3.Distance(player.transform.position, transform.position) > range)
+                    {
+                        walkSetPath = true;
+                    }
                 }
             }
+        }
 
+        if (!npcMovement.isWaiting)
+        {
             if (walkSetPath && !wander)
             {
                StartCoroutine(npcMovement.SetPath(agent, anim, accuracy, timetoPause));
             }
 
-            if (wander && !walkSetPath)
+            else if (wander && !walkSetPath)
             {
                 StartCoroutine(npcMovement.Wander(agent, anim, accuracy, timetoPause));
             }

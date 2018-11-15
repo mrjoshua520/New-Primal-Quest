@@ -16,7 +16,7 @@ public class NPCMovement
     public void SetTarget(NavMeshAgent agent, Animator anim, GameObject target)
     {
         anim.SetBool("isWalking", true);
-        agent.SetDestination(target.transform.position);
+        agent.SetDestination(target.transform.position);       
     }
  
     public IEnumerator SetPath(NavMeshAgent agent, Animator anim, float turnDistance, float waitTime)
