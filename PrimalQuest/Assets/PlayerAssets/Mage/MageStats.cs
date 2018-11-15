@@ -20,6 +20,7 @@ public class MageStats
     static bool Boss = false;
     //====================================
 
+    
     public void AddHealth(float HP)
     {
         tempHP = CurrentHP;

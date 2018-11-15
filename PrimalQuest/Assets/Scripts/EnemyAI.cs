@@ -4,19 +4,23 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
-{   
+{
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
 
-    public int range = 5;
+    [Header("Enemy Stats")]
+    public float damage;
+    public float range = 5;
     public int accuracy;
     public int timetoPause;
 
+    [Header("NPC Path Options")]
     public bool walkSetPath;
     public bool wander;
     public bool willChasePlayer;
    
+    [Header("NPC Waypoints")]
     public NPCMovement npcMovement;
 
 	// Use this for initialization
@@ -30,28 +34,24 @@ public class EnemyAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+
         if (willChasePlayer)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) <= range)
+            if (distanceToPlayer <= range)
             {
-                if (wander)
-                {
-                    wander = false;
-                    npcMovement.SetTarget(agent, anim, player);
-                    if (Vector3.Distance(player.transform.position, transform.position) > range)
-                    {
-                        wander = true;
-                    }
-                }
+                wander = false;
+                walkSetPath = false;
+                npcMovement.SetTarget(agent, anim, player);
+                range = Mathf.Infinity;
 
-                else if (walkSetPath)
+                if(distanceToPlayer <= agent.stoppingDistance)
                 {
-                    walkSetPath = false;
-                    npcMovement.SetTarget(agent, anim, player);
-                    if (Vector3.Distance(player.transform.position, transform.position) > range)
-                    {
-                        walkSetPath = true;
-                    }
+                    Attack();
+                }
+                else if(distanceToPlayer > agent.stoppingDistance)
+                {
+                    anim.SetBool("isAttacking", false);
                 }
             }
         }
@@ -73,5 +73,11 @@ public class EnemyAI : MonoBehaviour
                 Debug.LogError("Please check either walksetpath or wander you cannot check both;");
             }
         }
+    }
+
+    public void Attack()
+    {
+        anim.SetBool("isAttacking", true);
+        transform.LookAt(player.transform.position);
     }
 }
