@@ -20,7 +20,7 @@ public class Class_Selection : MonoBehaviour
         player = GameObject.Find("Archer");
 
         DontDestroyOnLoad(player);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         loadpos = new Vector3(120f, 18f, 1f);
         player.transform.position = loadpos;
     }
@@ -34,7 +34,7 @@ public class Class_Selection : MonoBehaviour
         player = GameObject.Find("Mage");
 
         DontDestroyOnLoad(player);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         loadpos = new Vector3(120f, 18f, 1f);
         player.transform.position = loadpos;
     }
@@ -48,7 +48,7 @@ public class Class_Selection : MonoBehaviour
         player = GameObject.Find("Warrior");
 
         DontDestroyOnLoad(player);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         loadpos = new Vector3(120f, 18f, 1f);
         player.transform.position = loadpos;
     }
