@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33772799038135966}
   - component: {fileID: 23240187102395216}
   - component: {fileID: 64017125827572396}
+  - component: {fileID: 208613516820742512}
   m_Layer: 0
   m_Name: Rock_04
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383614408900354}
   m_LocalRotation: {x: -0.085972585, y: 0.67659944, z: 0.24518836, w: 0.6889881}
-  m_LocalPosition: {x: 81.55, y: 11.44, z: 109.6}
+  m_LocalPosition: {x: 210.88, y: 0.3350328, z: 209.1236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 92d67c75473834d4fa78193002772bdf, type: 3}
+--- !u!208 &208613516820742512
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383614408900354}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.641, y: 1.401, z: 1.71}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.99000007, y: -0.179, z: 0.333}
+  m_TimeToStationary: 0.5
