@@ -52,6 +52,23 @@ public class Stats
         damage = 5f;
     }
 
+    public bool PlantPickup()
+    {
+        if (!Forest)
+        {
+            numOfPlants++;
+
+            if (numOfPlants == 9)
+            {
+                Forest = true;
+            }
+
+            return Forest;
+        }
+
+        return false;
+    }
+
     public void AddHealth(float HP)
     {
         tempHP = CurrentHP;

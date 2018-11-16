@@ -6,10 +6,14 @@ public class ArrowShoot : MonoBehaviour {
 
     Animator anim;
     bool isAttacking = false;
+    RaycastHit hitInfo;
+    Camera camera;
+    float range = 50f;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        camera = GetComponent<Camera>();
     }
 
     private void Update()
@@ -26,8 +30,29 @@ public class ArrowShoot : MonoBehaviour {
     {
         anim.SetBool("isAttack", true);
 
+        Damage();
+
         yield return new WaitForSeconds(.48f);
 
         anim.SetBool("isAttack", false);
+    }
+
+    void Damage()
+    {
+        RaycastHit hitInformation;
+        //shoot a ray from the cameras current position
+        //shoot it the way that the camera is facing
+
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInformation, range))
+        {
+            //Debug.Log(hitInformation.transform.tag);
+
+            string targetHit = hitInformation.transform.tag;
+
+            if (targetHit == "Enemy")
+            {
+                //damage
+            }
+        }
     }
 }
