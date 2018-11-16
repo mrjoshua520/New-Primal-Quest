@@ -79,5 +79,9 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("isAttacking", true);
         transform.LookAt(player.transform.position);
+        //I figured I'd add these here just to be sure you knew. 
+        //For deducting health the function is this
+        //variableName.DeductHealth(numberofdamagetaken);
+        //The player script handles everything else
     }
 }
