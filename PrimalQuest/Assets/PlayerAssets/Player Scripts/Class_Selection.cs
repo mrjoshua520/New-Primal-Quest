@@ -9,6 +9,7 @@ public class Class_Selection : MonoBehaviour
     public GameObject mage;
     public GameObject archer;
     public GameObject warrior;
+    Stats stat;
     Vector3 loadpos;
     static string Class;
     
@@ -18,6 +19,8 @@ public class Class_Selection : MonoBehaviour
         archer.SetActive(true);
         warrior.SetActive(false);
         Class = "Archer";
+        stat = new Stats();
+        stat.SetStatsArcher();
         player = GameObject.Find("Archer");
 
         DontDestroyOnLoad(player);
@@ -32,6 +35,8 @@ public class Class_Selection : MonoBehaviour
         archer.SetActive(true);
         warrior.SetActive(false);
         Class = "Mage";
+        stat = new Stats();
+        stat.SetStatsMage();
         player = GameObject.Find("Mage");
 
         DontDestroyOnLoad(player);
@@ -46,6 +51,8 @@ public class Class_Selection : MonoBehaviour
         archer.SetActive(false);
         warrior.SetActive(true);
         Class = "Warrior";
+        stat = new Stats();
+        stat.SetStatsWarrior();
         player = GameObject.Find("Warrior");
 
         DontDestroyOnLoad(player);

@@ -4,9 +4,9 @@ using UnityEngine;
 //Temp
 using UnityEngine.SceneManagement;
 
-public class WarriorMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
-    WarriorStats player;
+    Stats player;
     CharacterController charControl;
     Vector3 move = Vector3.zero;
     float gravity = 30f;
@@ -14,7 +14,7 @@ public class WarriorMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = new WarriorStats();
+        player = new Stats();
         charControl = GetComponent<CharacterController>();
     }
 
@@ -69,4 +69,3 @@ public class WarriorMove : MonoBehaviour
         }
     }
 }
-

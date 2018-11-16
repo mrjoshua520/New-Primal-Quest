@@ -2,25 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MageStats
+public class Stats
 {
+
     //===============Stats================
-    static float TotalHP = 100f;
+    static float TotalHP;
     static float CurrentHP = TotalHP;
     float tempHP;
-    static float Defense = 0f;
-    static float speed = 7f;
-    static float jump = 15f;
-    static float damage = 10f;
+    static float Defense;
+    static float speed;
+    static float jump;
+    static float damage;
     //====================================
 
     //============QuestInfo===============
     static bool Cave = false;
     static bool Forest = false;
     static bool Boss = false;
+    static int numOfPlants = 0;
     //====================================
 
-    
+    public void SetStatsArcher()
+    {
+        TotalHP = 125f;
+        CurrentHP = TotalHP;
+        Defense = 2f;
+        speed = 10f;
+        jump = 7f;
+        damage = 5f;
+    }
+
+    public void SetStatsMage()
+    {
+        TotalHP = 100f;
+        CurrentHP = TotalHP;
+        Defense = 0f;
+        speed = 7f;
+        jump = 5f;
+        damage = 7f;
+    }
+
+    public void SetStatsWarrior()
+    {
+        TotalHP = 150f;
+        CurrentHP = TotalHP;
+        Defense = 5f;
+        speed = 5f;
+        jump = 3f;
+        damage = 5f;
+    }
+
     public void AddHealth(float HP)
     {
         tempHP = CurrentHP;
@@ -71,15 +102,14 @@ public class MageStats
         Defense = newDefense;
     }
 
+    public void ChangeSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
 
     public void ChangeJump(float newJump)
     {
         jump = newJump;
-    }
-
-    public void ChangeSpeed(float newSpeed)
-    {
-        speed = newSpeed;
     }
 
     public float GetSpeed()
