@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     public int health = 50;
     public int damage = 10;
     public float detectionRange = 5;
-    public int stopDistance;
+    public float stopDistance;
     public int timetoPause;
 
     [Header("NPC Path Options")]

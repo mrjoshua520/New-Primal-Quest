@@ -3037,7 +3037,7 @@ MonoBehaviour:
   health: 50
   damage: 0
   detectionRange: 5
-  stopDistance: 3
+  stopDistance: 4
   timetoPause: 0
   walkSetPath: 0
   wander: 0
