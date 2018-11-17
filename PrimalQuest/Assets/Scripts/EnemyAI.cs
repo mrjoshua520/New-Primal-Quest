@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     GameObject player;
     Animator anim;
     PlayerMove playerStats;
+    bool recentlyAttacked;
 
     [Header("Enemy Stats")]
     public int health = 50;
@@ -84,15 +85,28 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isAttacking", true);
         transform.LookAt(player.transform.position);
 
+        if(!recentlyAttacked)
+        {
+            StartCoroutine(DamagePlayer());
+        }       
+    }
+
+    IEnumerator DamagePlayer()
+    {
+        recentlyAttacked = true;
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, stopDistance))
+
+        if (Physics.Raycast(ray, out hit, stopDistance))
         {
-            if(hit.transform.CompareTag("Player"))
+            if (hit.transform.CompareTag("Player"))
             {
                 playerStats.player.DeductHealth(damage);
-            }          
-        }      
+                yield return new WaitForSeconds(1);
+            }
+        }
+        yield return new WaitForSeconds(.5f);
+        recentlyAttacked = false;
     }
 
     public void DeductHealth(int _damage)
