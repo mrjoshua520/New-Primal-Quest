@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
-    Stats player;
+    [HideInInspector]
+    public Stats player;
     CharacterController charControl;
     Vector3 move = Vector3.zero;
     float gravity = 30f;

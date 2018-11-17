@@ -1619,7 +1619,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1571153430324744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.91, y: 0, z: -82.93}
+  m_LocalPosition: {x: 5.1756783, y: 1.2861862, z: -13.258354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4817548754021488}
@@ -1867,16 +1867,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 6
-  accuracy: 2
-  timetoPause: 10
-  walkSetPath: 0
-  wander: 1
+  health: 50
+  damage: 10
+  detectionRange: 5
+  stopDistance: 0
+  timetoPause: 15
+  walkSetPath: 1
+  wander: 0
   willChasePlayer: 1
   npcMovement:
     waypoints:
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}

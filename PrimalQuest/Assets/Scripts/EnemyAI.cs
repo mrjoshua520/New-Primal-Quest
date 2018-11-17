@@ -8,11 +8,13 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
+    PlayerMove playerStats;
 
     [Header("Enemy Stats")]
-    public float damage;
-    public float range = 5;
-    public int accuracy;
+    public int health = 50;
+    public int damage = 10;
+    public float detectionRange = 5;
+    public int stopDistance;
     public int timetoPause;
 
     [Header("NPC Path Options")]
@@ -28,7 +30,9 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerStats = player.GetComponent<PlayerMove>();
         anim = GetComponent<Animator>();
+        agent.stoppingDistance = stopDistance;
     }
 	
 	// Update is called once per frame
@@ -38,18 +42,18 @@ public class EnemyAI : MonoBehaviour
 
         if (willChasePlayer)
         {
-            if (distanceToPlayer <= range)
+            if (distanceToPlayer <= detectionRange)
             {
                 wander = false;
                 walkSetPath = false;
                 npcMovement.SetTarget(agent, anim, player);
-                range = Mathf.Infinity;
+                detectionRange = Mathf.Infinity;
 
-                if(distanceToPlayer <= agent.stoppingDistance)
+                if(distanceToPlayer <= stopDistance)
                 {
                     Attack();
                 }
-                else if(distanceToPlayer > agent.stoppingDistance)
+                else if(distanceToPlayer > stopDistance)
                 {
                     anim.SetBool("isAttacking", false);
                 }
@@ -60,12 +64,12 @@ public class EnemyAI : MonoBehaviour
         {
             if (walkSetPath && !wander)
             {
-               StartCoroutine(npcMovement.SetPath(agent, anim, accuracy, timetoPause));
+               StartCoroutine(npcMovement.SetPath(agent, anim, stopDistance, timetoPause));
             }
 
             else if (wander && !walkSetPath)
             {
-                StartCoroutine(npcMovement.Wander(agent, anim, accuracy, timetoPause));
+                StartCoroutine(npcMovement.Wander(agent, anim, stopDistance, timetoPause));
             }
 
             else if (wander && walkSetPath)
@@ -79,9 +83,32 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("isAttacking", true);
         transform.LookAt(player.transform.position);
-        //I figured I'd add these here just to be sure you knew. 
-        //For deducting health the function is this
-        //variableName.DeductHealth(numberofdamagetaken);
-        //The player script handles everything else
+
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, stopDistance))
+        {
+            if(hit.transform.CompareTag("Player"))
+            {
+                playerStats.player.DeductHealth(damage);
+            }          
+        }      
+    }
+
+    public void DeductHealth(int _damage)
+    {
+        health -= _damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        agent.isStopped = true;
+        anim.SetBool("isDead", true);
+        Destroy(gameObject, 5f);
     }
 }
