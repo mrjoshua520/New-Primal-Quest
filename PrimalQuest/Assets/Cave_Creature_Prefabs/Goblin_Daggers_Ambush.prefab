@@ -2116,20 +2116,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  range: 20
-  accuracy: 2
+  health: 50
+  damage: 10
+  detectionRange: 20
+  stopDistance: 2
   timetoPause: 10
   walkSetPath: 0
-  wander: 1
+  wander: 0
   willChasePlayer: 1
   npcMovement:
-    waypoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    waypoints: []
     isWaiting: 0
 --- !u!137 &137897854358377534
 SkinnedMeshRenderer:

@@ -1870,17 +1870,13 @@ MonoBehaviour:
   health: 50
   damage: 10
   detectionRange: 5
-  stopDistance: 0
+  stopDistance: 2
   timetoPause: 15
-  walkSetPath: 1
+  walkSetPath: 0
   wander: 0
-  willChasePlayer: 1
+  willChasePlayer: 0
   npcMovement:
-    waypoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    waypoints: []
     isWaiting: 0
 --- !u!137 &137332818862316978
 SkinnedMeshRenderer:
