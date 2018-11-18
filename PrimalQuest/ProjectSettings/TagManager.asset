@@ -9,6 +9,7 @@ TagManager:
   - Concrete
   - Generic
   - Enemy
+  - TownAI
   layers:
   - Default
   - TransparentFX

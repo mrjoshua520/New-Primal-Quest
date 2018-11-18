@@ -15,7 +15,7 @@ public class DoorAnimations : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "TownAI")
         {
             StartCoroutine(DoorDelay());
         }
