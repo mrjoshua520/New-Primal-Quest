@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlantPickupTrigger : MonoBehaviour {
 
+    Stats stat;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        stat = new Stats();
 	}
 	
 	// Update is called once per frame
@@ -16,11 +19,13 @@ public class PlantPickupTrigger : MonoBehaviour {
 
     void OnTriggerStay(Collider collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if(collider.tag == "Player")
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("E key pressed");
+                Destroy(gameObject);
+                stat.PlantPickup();
             }
         }
     }

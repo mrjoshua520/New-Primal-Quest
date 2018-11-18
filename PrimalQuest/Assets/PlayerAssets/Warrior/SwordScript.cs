@@ -10,12 +10,16 @@ public class SwordScript : MonoBehaviour {
     RaycastHit hitInfo;
     Camera camera;
     float range = 3f;
+    EnemyAI enemy;
+    Stats stat;
 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         camera = GetComponent<Camera>();
+        enemy = new EnemyAI();
+        stat = new Stats();
     }
 
     private void Update()
@@ -53,7 +57,7 @@ public class SwordScript : MonoBehaviour {
 
             if (targetHit == "Enemy")
             {
-                //damage
+                enemy.DeductHealth(stat.GetDamage());
             }
         }
     }

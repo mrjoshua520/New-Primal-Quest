@@ -12,7 +12,7 @@ public class Stats
     static float Defense;
     static float speed;
     static float jump;
-    static float damage;
+    static int damage;
     //====================================
 
     //============QuestInfo===============
@@ -29,7 +29,7 @@ public class Stats
         Defense = 2f;
         speed = 10f;
         jump = 7f;
-        damage = 5f;
+        damage = 5;
     }
 
     public void SetStatsMage()
@@ -39,7 +39,7 @@ public class Stats
         Defense = 0f;
         speed = 7f;
         jump = 5f;
-        damage = 7f;
+        damage = 7;
     }
 
     public void SetStatsWarrior()
@@ -49,7 +49,7 @@ public class Stats
         Defense = 5f;
         speed = 5f;
         jump = 3f;
-        damage = 5f;
+        damage = 5;
     }
 
     public bool PlantPickup()
@@ -61,11 +61,13 @@ public class Stats
             if (numOfPlants == 9)
             {
                 Forest = true;
+                Debug.Log("Quest Complete");
             }
 
             return Forest;
+            //Just have it display the GUI here
         }
-
+        //have do nothing
         return false;
     }
 
@@ -108,7 +110,7 @@ public class Stats
         }
     }
 
-    public void ChangeDamage(float newDamage)
+    public void ChangeDamage(int newDamage)
     {
         damage = newDamage;
     }
@@ -134,7 +136,7 @@ public class Stats
         return speed;
     }
 
-    public float GetDamage()
+    public int GetDamage()
     {
         return damage;
     }
