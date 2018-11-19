@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     public float detectionRange = 5;
     public float stopDistance;
     public int timetoPause;
+    public Vector3 offset = Vector3.zero;
 
     [Header("NPC Path Options")]
     public bool walkSetPath;
@@ -39,6 +40,8 @@ public class EnemyAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //DeductHealth(1);
+      
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         if (willChasePlayer)
@@ -83,7 +86,7 @@ public class EnemyAI : MonoBehaviour
     public void Attack()
     {
         anim.SetBool("isAttacking", true);
-        transform.LookAt(player.transform.position);
+        transform.LookAt(player.transform.position + offset);
 
         if(!recentlyAttacked)
         {
@@ -115,6 +118,7 @@ public class EnemyAI : MonoBehaviour
 
         if(health <= 0)
         {
+            Debug.Log("Dying");
             Die();
         }
     }
@@ -124,5 +128,10 @@ public class EnemyAI : MonoBehaviour
         agent.isStopped = true;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5f);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, stopDistance);
     }
 }

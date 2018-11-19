@@ -17,7 +17,7 @@ public class SpellScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         camera = GetComponent<Camera>();
-        enemy = new EnemyAI();
+       
         stat = new Stats();
     }
 
@@ -56,6 +56,7 @@ public class SpellScript : MonoBehaviour
 
             if (targetHit == "Enemy")
             {
+                enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
             }
         }

@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 95462731666195366}
   - component: {fileID: 114387880026740724}
   - component: {fileID: 195958975277679114}
+  - component: {fileID: 65933527609968002}
   m_Layer: 0
   m_Name: Goblin_Daggers
   m_TagString: Enemy
@@ -2087,6 +2088,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1637844842666922}
   m_Mesh: {fileID: 4300016, guid: 369bf22314485f2499b7991776c86074, type: 3}
+--- !u!65 &65933527609968002
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1829076106702704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8, z: 0.5}
+  m_Center: {x: 0.0066608344, y: 0.95, z: 4.9149407e-11}
 --- !u!95 &95462731666195366
 Animator:
   serializedVersion: 3
@@ -2116,11 +2129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 20
+  damage: 5
   detectionRange: 5
-  stopDistance: 2
+  stopDistance: 1.5
   timetoPause: 10
+  offset: {x: 0, y: -1, z: 0}
   walkSetPath: 0
   wander: 0
   willChasePlayer: 0

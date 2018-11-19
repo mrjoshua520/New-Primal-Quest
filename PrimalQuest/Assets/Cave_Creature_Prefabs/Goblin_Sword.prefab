@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 95086913242167318}
   - component: {fileID: 114538704113939144}
   - component: {fileID: 195271654711652344}
+  - component: {fileID: 65942171863581256}
   m_Layer: 0
   m_Name: Goblin_Sword
   m_TagString: Enemy
@@ -1838,6 +1839,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461537153152012}
   m_Mesh: {fileID: 4300020, guid: 369bf22314485f2499b7991776c86074, type: 3}
+--- !u!65 &65942171863581256
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571153430324744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8, z: 0.5}
+  m_Center: {x: 0.0066608344, y: 0.95, z: 4.9149407e-11}
 --- !u!95 &95086913242167318
 Animator:
   serializedVersion: 3
@@ -1867,11 +1880,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 30
   damage: 10
   detectionRange: 5
-  stopDistance: 2.5
+  stopDistance: 2
   timetoPause: 15
+  offset: {x: 0, y: -1, z: 0}
   walkSetPath: 0
   wander: 0
   willChasePlayer: 0
