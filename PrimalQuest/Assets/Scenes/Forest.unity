@@ -242,11 +242,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 39
+      value: 38.999985
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: 3.3761926
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -254,19 +254,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.003078259
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.5774924
+      value: 0.5774846
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.0043516243
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.81639606
+      value: 0.8163842
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_RootOrder
@@ -274,7 +274,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 70.549
+      value: 70.548004
       objectReference: {fileID: 0}
     - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_LocalScale.x
@@ -291,6 +291,14 @@ Prefab:
     - target: {fileID: 127016, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.57600003
+      objectReference: {fileID: 0}
+    - target: {fileID: 433228, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.20300001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed8e116645caba043b21c7a7497046c9, type: 2}
@@ -1021,7 +1029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &310680317
 Transform:
   m_ObjectHideFlags: 0
@@ -1852,6 +1860,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &486749304
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 486749301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &486749305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,6 +2211,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 167908, guid: 33cfb001a92f2f5419d0987a804c4f96,
     type: 2}
   m_PrefabInternal: {fileID: 428054384}
+--- !u!136 &622540080
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622540079}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!4 &622540081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489904, guid: 33cfb001a92f2f5419d0987a804c4f96,
@@ -2227,8 +2261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 4
@@ -2655,6 +2689,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &703121083
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703121080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &703121084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,8 +2713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 0
@@ -2874,6 +2921,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &767162610
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767162607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &767162611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2885,8 +2945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 3
@@ -2978,6 +3038,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &794223379
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794223376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &794223380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2989,8 +3062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 7
@@ -3142,6 +3215,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &848980791
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848980788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &848980792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,8 +3239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 3
@@ -3283,6 +3369,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &924314283
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924314280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &924314284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,8 +3393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 0
@@ -3392,6 +3491,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &962714320
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 962714317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &962714321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3845,6 +3957,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1093910061
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093910058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1093910062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3856,8 +3981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 2
@@ -4624,6 +4749,19 @@ MonoBehaviour:
     - {fileID: 1227168612}
     - {fileID: 1304524090}
     isWaiting: 0
+--- !u!136 &1293876268
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293876264}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &1304524090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,6 +4821,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1321871963
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1321871960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1321871964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4694,8 +4845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 0
@@ -5452,6 +5603,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1505215910
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505215907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!114 &1505215911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5533,6 +5697,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1544253191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544253188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1544253192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5544,8 +5721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 3
@@ -6623,6 +6800,19 @@ MonoBehaviour:
     - {fileID: 1687355612}
     - {fileID: 719167803}
     isWaiting: 0
+--- !u!136 &1808540391
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808540387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1001 &1812392151
 Prefab:
   m_ObjectHideFlags: 0
@@ -6770,6 +6960,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1846064220
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1846064217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1846064221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6781,8 +6984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 40
+  damage: 8
   detectionRange: 15
   stopDistance: 4
   timetoPause: 3
@@ -7330,6 +7533,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1954769649
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954769646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1954769650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7341,8 +7557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 5
@@ -7642,6 +7858,19 @@ MonoBehaviour:
     - {fileID: 1435184166}
     - {fileID: 719167803}
     isWaiting: 0
+--- !u!136 &1999584989
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999584985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &2014971754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100846, guid: 57cff6f5c34e5b340b0cb8c045bbf81c,
@@ -7673,6 +7902,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &2014971757
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014971754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &2014971758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7684,8 +7926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
+  health: 30
+  damage: 15
   detectionRange: 15
   stopDistance: 3
   timetoPause: 0
@@ -7785,3 +8027,16 @@ MonoBehaviour:
     - {fileID: 1227168612}
     - {fileID: 1687355612}
     isWaiting: 0
+--- !u!136 &2068746865
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068746861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
