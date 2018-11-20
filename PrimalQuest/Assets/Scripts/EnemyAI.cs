@@ -115,6 +115,8 @@ public class EnemyAI : MonoBehaviour
     public void DeductHealth(int _damage)
     {
         health -= _damage;
+        willChasePlayer = true;
+        detectionRange = Mathf.Infinity;
 
         if(health <= 0)
         {
