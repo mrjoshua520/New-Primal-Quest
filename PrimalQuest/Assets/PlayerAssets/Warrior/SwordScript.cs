@@ -18,7 +18,7 @@ public class SwordScript : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         camera = GetComponent<Camera>();
-        enemy = new EnemyAI();
+
         stat = new Stats();
     }
 
@@ -57,6 +57,7 @@ public class SwordScript : MonoBehaviour {
 
             if (targetHit == "Enemy")
             {
+                enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
             }
         }

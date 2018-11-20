@@ -29,7 +29,7 @@ public class Stats
         Defense = 2f;
         speed = 10f;
         jump = 7f;
-        damage = 5;
+        damage = 10;
     }
 
     public void SetStatsMage()
@@ -39,7 +39,7 @@ public class Stats
         Defense = 0f;
         speed = 7f;
         jump = 5f;
-        damage = 7;
+        damage = 12;
     }
 
     public void SetStatsWarrior()
@@ -49,7 +49,7 @@ public class Stats
         Defense = 5f;
         speed = 5f;
         jump = 3f;
-        damage = 5;
+        damage = 10;
     }
 
     public bool PlantPickup()

@@ -16,7 +16,6 @@ public class ArrowShoot : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         camera = GetComponent<Camera>();
-        enemy = new EnemyAI();
         stat = new Stats();
     }
 
@@ -55,6 +54,7 @@ public class ArrowShoot : MonoBehaviour {
 
             if (targetHit == "Enemy")
             {
+                enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
             }
         }
