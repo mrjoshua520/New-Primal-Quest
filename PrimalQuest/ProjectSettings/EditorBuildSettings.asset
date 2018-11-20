@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss_Scenes/Satiri.unity
     guid: b0c13a2b962b1ae49b7a7fbb94e87199
+  - enabled: 1
+    path: Assets/Scenes/Misc Scenes/DeathScene.unity
+    guid: f966594a8acdb9f43870f6adb387c242
   m_configObjects: {}

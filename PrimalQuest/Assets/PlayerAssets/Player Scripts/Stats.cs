@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stats
 {
@@ -61,7 +62,7 @@ public class Stats
             if (numOfPlants == 9)
             {
                 Forest = true;
-                Debug.Log("Quest Complete");
+                //Debug.Log("Quest Complete");
             }
 
             return Forest;
@@ -102,7 +103,8 @@ public class Stats
 
         if (tempHP <= 0)
         {
-            //Death
+            CurrentHP = 0;
+            SceneManager.LoadScene(6);
         }
         else
         {
