@@ -7,6 +7,7 @@ public class DeleteThisScript : MonoBehaviour
     public float speed = 10f;
     public float jumpForce = 100f;
     public float gravity = -300f;
+    public float health;
 
     public float rotateSpeed;
 
@@ -48,5 +49,18 @@ public class DeleteThisScript : MonoBehaviour
         {
             controller.Move(move * Time.deltaTime);
         }
+    }
+
+    public void Damage(float damage)
+    {
+
+        Debug.Log("Hit" + damage);
+       
+        //health -= damage;
+
+        //if(health <= 0)
+        //{
+        //    Debug.Log("You Died");
+        //}
     }
 }
