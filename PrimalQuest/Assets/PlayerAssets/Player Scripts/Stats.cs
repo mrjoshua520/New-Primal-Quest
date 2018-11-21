@@ -150,13 +150,6 @@ public class Stats
 
     public string GetHPPerc()
     {
-        float HPPerc = (CurrentHP / TotalHP) * 100;
-        string HealthPercent;
-
-        HPPerc = Mathf.Round(HPPerc);
-
-        HealthPercent = HPPerc.ToString();
-
-        return HealthPercent;
+        return CurrentHP + " / " + TotalHP;
     }
 }

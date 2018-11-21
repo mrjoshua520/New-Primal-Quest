@@ -18,6 +18,16 @@ public class HUD : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        HP.text = "Health: " + stat.GetHPPerc().ToString();
+        DisplayHealth();
 	}
+
+    void DisplayHealth()
+    {
+        HP.text = "Health: " + stat.GetHPPerc().ToString();
+    }
+
+    void Dialogue(string text)
+    {
+
+    }
 }
