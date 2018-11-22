@@ -5,26 +5,14 @@ using UnityEngine;
 public class BlacksmithAnimation : MonoBehaviour {
 
     Animator anim;
-    public BlacksmithTrigger bst;
-
     GameObject text;
-    HUD pHUD;
+    PlayerHUD pHUD;
 
-
-
-    // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
-        //bst = GetComponent<BlacksmithTrigger>();
-        bst = FindObjectOfType<BlacksmithTrigger>();
-
         text = GameObject.Find("HUD");
-        pHUD = text.GetComponent<HUD>();
-
-
-
-        //StartCoroutine(blacksmithAnimation());
+        pHUD = text.GetComponent<PlayerHUD>();
     }
 
     public IEnumerator blacksmithAnimation()
@@ -33,7 +21,9 @@ public class BlacksmithAnimation : MonoBehaviour {
 
         Debug.Log("inside animation");
         
-        text.Dialogue(“Blacksmith”, “This is a test.”);
+        //pHUD.Dialogue("Blacksmith", "This is a test");
+
+        Debug.Log("After dialogue");
 
         anim.SetBool("isWalking", false);
         yield return new WaitForSeconds(5);

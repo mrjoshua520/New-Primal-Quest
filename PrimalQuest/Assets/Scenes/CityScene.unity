@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000084, guid: 377a1dbdd210a0f4b93ccb78edf3d39b,
+  m_LightingDataAsset: {fileID: 112000128, guid: 377a1dbdd210a0f4b93ccb78edf3d39b,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -14206,7 +14206,6 @@ GameObject:
   - component: {fileID: 201453583}
   - component: {fileID: 201453582}
   - component: {fileID: 201453581}
-  - component: {fileID: 201453584}
   m_Layer: 0
   m_Name: BlacksmithTrigger
   m_TagString: Untagged
@@ -14246,17 +14245,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -4.1660004, z: 0}
---- !u!114 &201453584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 201453580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32ba24d9f20d364e8cc5af4f17e3e04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &202920463
 GameObject:
   m_ObjectHideFlags: 0
@@ -35057,14 +35045,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931270641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.93, y: 16.74, z: 37.39}
+  m_LocalRotation: {x: -0, y: 0.9980411, z: -0, w: 0.06256199}
+  m_LocalPosition: {x: 246.2, y: 16.74, z: 94.6}
   m_LocalScale: {x: 1, y: 1.148303, z: 1}
   m_Children:
   - {fileID: 2121880376}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 172.826, z: 0}
 --- !u!1 &933875727
 GameObject:
   m_ObjectHideFlags: 0
@@ -44865,7 +44853,7 @@ GameObject:
   m_Layer: 0
   m_Name: CitySideDock
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -81671,6 +81659,7 @@ GameObject:
   - component: {fileID: 1470635192}
   - component: {fileID: 1470635193}
   - component: {fileID: 1470635197}
+  - component: {fileID: 1470635198}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Untagged
@@ -81722,7 +81711,7 @@ NavMeshAgent:
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
-  m_AutoRepath: 1
+  m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
@@ -81738,7 +81727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66d41032fb3ed44c8bd913cdd2edc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bst: {fileID: 201453584}
 --- !u!4 &1470635194
 Transform:
   m_ObjectHideFlags: 0
@@ -81747,7 +81735,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470635190}
   m_LocalRotation: {x: -0, y: 0.5881201, z: -0, w: 0.8087737}
-  m_LocalPosition: {x: -1.8271637, y: -1.0031233, z: -2.645424}
+  m_LocalPosition: {x: -1.6, y: -1.0031233, z: -3.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1602199597}
@@ -81800,6 +81788,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1470635198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1470635190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32ba24d9f20d364e8cc5af4f17e3e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bsa: {fileID: 1470635193}
 --- !u!1 &1475202555
 GameObject:
   m_ObjectHideFlags: 0
@@ -112939,8 +112939,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075320576}
-  m_LocalRotation: {x: 0.045302283, y: 0.95254, z: 0.1774866, w: -0.24313341}
-  m_LocalPosition: {x: -58.752876, y: 9.388152, z: -67.21206}
+  m_LocalRotation: {x: 0.047070887, y: 0.94262224, z: 0.15087977, w: -0.29408}
+  m_LocalPosition: {x: -60.79824, y: 10.283802, z: -71.97641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}

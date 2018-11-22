@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BlacksmithTrigger : MonoBehaviour {
 
-    BlacksmithAnimation bsa;
-    //public bool onTriggerBlSm;
+    public BlacksmithAnimation bsa;
+   
 
     void Start()
     {
         bsa = FindObjectOfType<BlacksmithAnimation>();
-        //onTriggerBlSm = true;
+       
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {

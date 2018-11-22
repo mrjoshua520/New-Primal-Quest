@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerHUD : MonoBehaviour {
 
+
     Stats stat;
     public GameObject panel;
     public TextMeshProUGUI dialogue;
@@ -44,6 +45,7 @@ public class PlayerHUD : MonoBehaviour {
 
     public void Dialogue(string speaker, string text)
     {
+        Debug.Log("Inside Dialogue");
         int textLength = text.Length; //Length of the text sent
         int speakerLength = speaker.Length; //Length of the speakers name
 
