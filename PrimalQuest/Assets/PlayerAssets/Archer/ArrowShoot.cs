@@ -12,6 +12,7 @@ public class ArrowShoot : MonoBehaviour {
     EnemyAI enemy;
     Stats stat;
 
+
     private void Start()
     {
         anim = GetComponent<Animator>();

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class HUD : MonoBehaviour {
+public class PlayerHUD : MonoBehaviour {
 
     Stats stat;
     public GameObject panel;
@@ -42,7 +42,7 @@ public class HUD : MonoBehaviour {
         HP.text = "Health: " + stat.GetHPPerc().ToString();
     }
 
-    void Dialogue(string speaker, string text)
+    public void Dialogue(string speaker, string text)
     {
         int textLength = text.Length; //Length of the text sent
         int speakerLength = speaker.Length; //Length of the speakers name
