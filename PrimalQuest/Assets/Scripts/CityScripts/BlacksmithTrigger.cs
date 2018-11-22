@@ -13,11 +13,14 @@ public class BlacksmithTrigger : MonoBehaviour {
         //onTriggerBlSm = true;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             Debug.Log("inside trigger player");
+
+
+
             StartCoroutine(bsa.blacksmithAnimation());
 
             //if (onTriggerBlSm == true)

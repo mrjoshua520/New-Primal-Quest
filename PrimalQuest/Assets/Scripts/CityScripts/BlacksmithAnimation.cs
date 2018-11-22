@@ -7,14 +7,22 @@ public class BlacksmithAnimation : MonoBehaviour {
     Animator anim;
     public BlacksmithTrigger bst;
 
+    GameObject text;
+    HUD pHUD;
 
-	// Use this for initialization
-	void Start ()
+
+
+    // Use this for initialization
+    void Start ()
     {
         anim = GetComponent<Animator>();
         //bst = GetComponent<BlacksmithTrigger>();
         bst = FindObjectOfType<BlacksmithTrigger>();
-        
+
+        text = GameObject.Find("HUD");
+        pHUD = text.GetComponent<HUD>();
+
+
 
         //StartCoroutine(blacksmithAnimation());
     }
@@ -24,6 +32,8 @@ public class BlacksmithAnimation : MonoBehaviour {
         //bst.onTriggerBlSm = false;
 
         Debug.Log("inside animation");
+        
+        text.Dialogue(“Blacksmith”, “This is a test.”);
 
         anim.SetBool("isWalking", false);
         yield return new WaitForSeconds(5);
