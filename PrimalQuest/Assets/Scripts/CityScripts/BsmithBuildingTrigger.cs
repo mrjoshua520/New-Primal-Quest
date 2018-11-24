@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BsmtihBuildingTrigger : MonoBehaviour {
+public class BsmtihBuildingTrigger : MonoBehaviour
+{
 
     public EnemyAI enemyAI;
 
     void Start()
     {
         enemyAI = FindObjectOfType<EnemyAI>();
-        
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -19,9 +20,10 @@ public class BsmtihBuildingTrigger : MonoBehaviour {
             Debug.Log("inside trigger player");
 
             enemyAI.enabled = true;
-        
+
         }
     }
+}
 
 
 
