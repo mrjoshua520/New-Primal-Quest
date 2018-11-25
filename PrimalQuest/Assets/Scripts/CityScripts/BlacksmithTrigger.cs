@@ -5,12 +5,15 @@ using UnityEngine;
 public class BlacksmithTrigger : MonoBehaviour {
 
     public BlacksmithAnimation bsa;
-   
-
+    EnemyAI enemyAI;
+    Collider collider;
+    
+    
     void Start()
     {
-        bsa = FindObjectOfType<BlacksmithAnimation>();
-       
+        //bsa = FindObjectOfType<BlacksmithAnimation>();
+        enemyAI = GetComponent<EnemyAI>();
+        collider = GetComponent<Collider>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -19,16 +22,12 @@ public class BlacksmithTrigger : MonoBehaviour {
         {
             Debug.Log("inside trigger player");
 
+            //GetComponent<Collider>().isTrigger = false;
+            collider.enabled = false;
+            enemyAI.enabled = false;
 
-
+            //blacksmithDialogue();
             StartCoroutine(bsa.blacksmithAnimation());
-
-            //if (onTriggerBlSm == true)
-            //{
-                //Debug.Log("inside trigger player");
-                //StartCoroutine(bsa.blacksmithAnimation());
-            //}
-
         }
     }
 }
