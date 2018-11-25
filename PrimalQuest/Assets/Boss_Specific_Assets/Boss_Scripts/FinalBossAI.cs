@@ -7,13 +7,15 @@ public class FinalBossAI : MonoBehaviour
     Animator anim;
     GameObject player;
     public bool Begin = false;
-    bool Combat = false;
-    float distanceToPlayer;
-    float Timer;
+    public bool Combat = false;
+    public float distanceToPlayer;
+    public float Timer;
 
     [Header("Boss Stats")]
     public float health;
     public float damage;
+    public float walkSpeed = 5f;
+    public float flySpeed = 10f;
 
     private void Start()
     {
@@ -38,8 +40,15 @@ public class FinalBossAI : MonoBehaviour
          
         if (Combat)
         {
-            if (distanceToPlayer <= 5)
+            if (Timer > 3)
             {
+                anim.SetBool("Begin", false);
+            }
+            distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            transform.LookAt(player.transform);
+            if (distanceToPlayer <= 4)
+            {
+                Timer += Time.deltaTime;
                 if (Timer >= 5f)
                 {
                     //Player was too close for too long
@@ -51,28 +60,28 @@ public class FinalBossAI : MonoBehaviour
                     //Keep Attacking with sword
                 }
             }
-            else if (distanceToPlayer > 5)
+            else if (distanceToPlayer > 4)
             {
-                if (Timer >= 5f)
+                Timer += Time.deltaTime;
+                if (Timer >= 5f && distanceToPlayer < 8)
                 {
-                    //Whip Attack
-                    //Drag Player Closer
+                    RaycastHit hitInformation;
+                    anim.SetBool("whipAttck", true);
+                    if (Physics.Raycast(transform.position, transform.forward, out hitInformation, 8))
+                    {
+                        string targetHit = hitInformation.transform.tag;
+
+                        if (targetHit == "Player")
+                        {
+                            player.transform.position += player.transform.forward * 4;
+                        }
+                    }
+                    anim.SetBool("whipAttck", false);
+                    Timer = 0;
                 }
                 else
                 {
-                    //Walk to Player
-                }
-            }
-            else if (distanceToPlayer > 10)
-            {
-                //too far away get closer walk
-                if (Timer < 5f)
-                {
-                    //walk to player
-                }
-                else
-                {
-                    //Fly to player
+                    transform.position += transform.forward * walkSpeed * Time.deltaTime;
                 }
             }
         }

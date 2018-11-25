@@ -2748,8 +2748,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 220261692}
-  m_LocalRotation: {x: 0.07173488, y: 0.12900048, z: 0.009356659, w: -0.9890023}
-  m_LocalPosition: {x: 178.20161, y: 242.09361, z: 33.79689}
+  m_LocalRotation: {x: 0.013830498, y: 0.71903014, z: 0.014314877, w: -0.69469386}
+  m_LocalPosition: {x: 176.96613, y: 251.2493, z: -25.59739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 397019823}
@@ -11292,8 +11292,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Begin: 0
-  health: 0
-  damage: 0
+  Combat: 0
+  distanceToPlayer: 0
+  Timer: 0
+  health: 150
+  damage: 20
+  walkSpeed: 5
+  flySpeed: 10
+--- !u!136 &789400609
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 789400606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &790911671
 GameObject:
   m_ObjectHideFlags: 0

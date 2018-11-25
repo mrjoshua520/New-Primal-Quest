@@ -7,7 +7,6 @@ public class SpellScript : MonoBehaviour
 
     Animator anim;
     bool isAttacking = false;
-    RaycastHit hitInfo;
     Camera camera;
     float range = 25f;
     EnemyAI enemy;
