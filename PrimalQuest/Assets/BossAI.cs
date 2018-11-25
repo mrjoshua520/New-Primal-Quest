@@ -14,6 +14,7 @@ public class BossAI : MonoBehaviour
     bool recentlyAttacked;
     bool charging = false;
     float distanceToPlayer;
+    float proximty = 8;
 
     [Header("Boss Stats")]
     public float health;
@@ -40,33 +41,6 @@ public class BossAI : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-
-       
-       if(distanceToPlayer <= detectionRange && distanceToPlayer >= detectionRange /2)
-       {
-           Charge();
-       }
-
-       if (distanceToPlayer <= stopDistance && charging)
-       {
-           anim.SetBool("isRunning", false);
-           anim.SetBool("useRunningAttack", true);
-           charging = false;
-            StartCoroutine(ComboAttack());
-       }
-
-        else if(distanceToPlayer <= detectionRange/2 && !charging)
-       {
-            wander = false;
-            movement.SetTarget(agent, anim, player);
-       }
-
-       else if (distanceToPlayer <= stopDistance && !charging)
-       {
-            Attack();
-       }
-
         if (!movement.isWaiting)
         {
             if (wander)
@@ -74,6 +48,48 @@ public class BossAI : MonoBehaviour
                 StartCoroutine(movement.Wander(agent, anim, stopDistance, timeToPause));
             }
         }
+
+        if(!wander)
+        {
+            transform.LookAt(player.transform.position - Vector3.up);
+            movement.SetTarget(agent, anim, player);
+        }
+
+        distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+
+       
+       if(distanceToPlayer <= detectionRange && distanceToPlayer >= proximty)
+       {
+           Charge();
+       }
+
+       if (distanceToPlayer <= proximty - 4 && charging)
+       {
+            ChangeAnimation("useRunningAttack");
+            StartCoroutine(ComboAttack());
+       }
+
+       //if(distanceToPlayer <= detectionRange/2 && !charging)
+       //{
+       //     wander = false;
+       //     movement.SetTarget(agent, anim, player);
+       //}
+
+       if (distanceToPlayer <= stopDistance && !charging)
+       {
+            Attack();
+       }
+
+       if (distanceToPlayer >= stopDistance && distanceToPlayer <= proximty && !charging)
+        {
+            Follow();
+        }
+    }
+
+    void Follow()
+    {
+        ChangeAnimation("isWalking");
+        movement.SetTarget(agent, anim, player);
     }
 
     public void Attack()
@@ -81,11 +97,7 @@ public class BossAI : MonoBehaviour
         wander = false;
         agent.speed = 3.5f;
         movement.SetTarget(agent, anim, player);
-        anim.SetBool("useAttack", true);  
-        if (distanceToPlayer > stopDistance)
-        {
-            anim.SetBool("useBacisAttack", false);
-        }
+        ChangeAnimation("useBasicAttack");
     }
 
     public void Charge()
@@ -93,22 +105,18 @@ public class BossAI : MonoBehaviour
         wander = false;
         charging = true;
         movement.SetTarget(agent, anim, player);
-        agent.speed = 7;
-        anim.SetBool("isRunning", true);       
+        agent.speed = 9;
+        ChangeAnimation("isRunning");     
     }
 
     public IEnumerator ComboAttack()
     {
         agent.speed = 3.5f;
-
         yield return new WaitForSeconds(1);
-       
-        anim.SetBool("useComboAttack", true);
-        
-        if(distanceToPlayer > stopDistance)
-        {
-            anim.SetBool("useComboattack", false);
-        }
+        ChangeAnimation("useComboAttack");
+        yield return new WaitForSeconds(1);
+        charging = false;
+        Attack();
     }
 
     public void DoDamage()
@@ -131,13 +139,23 @@ public class BossAI : MonoBehaviour
     void Die()
     {
         agent.isStopped = true;
-        anim.SetBool("isDead", true);
+        ChangeAnimation("isDead");
         Destroy(gameObject, 5f);
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, stopDistance);
+    }
+
+    public void ChangeAnimation(string animParameter)
+    {
+        foreach (AnimatorControllerParameter parameter in anim.parameters)
+        {
+            anim.SetBool(parameter.name, false);
+        }
+
+        anim.SetBool(animParameter, true);
     }
 }
 
