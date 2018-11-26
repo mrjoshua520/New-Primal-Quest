@@ -12,6 +12,8 @@ public class ArrowShoot : MonoBehaviour {
     EnemyAI enemy;
     Stats stat;
 
+    public GameObject arrowPrefab;
+
 
     private void Start()
     {

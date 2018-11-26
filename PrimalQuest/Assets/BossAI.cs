@@ -33,7 +33,7 @@ public class BossAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         //playerStats = player.GetComponent<PlayerMove>();
-        playerStats = player.GetComponent <DeleteThisScript>();
+        playerStats = player.GetComponent <DeleteThisScript>(); //remove this and uncomment the other parts to work with actual player not test player
         anim = GetComponent<Animator>();
         agent.stoppingDistance = stopDistance;
     }
@@ -68,12 +68,6 @@ public class BossAI : MonoBehaviour
             ChangeAnimation("useRunningAttack");
             StartCoroutine(ComboAttack());
        }
-
-       //if(distanceToPlayer <= detectionRange/2 && !charging)
-       //{
-       //     wander = false;
-       //     movement.SetTarget(agent, anim, player);
-       //}
 
        if (distanceToPlayer <= stopDistance && !charging)
        {
