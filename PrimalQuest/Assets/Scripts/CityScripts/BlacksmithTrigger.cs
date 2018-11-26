@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BlacksmithTrigger : MonoBehaviour {
 
     public BlacksmithAnimation bsa;
-    EnemyAI enemyAI;
+    public EnemyAI enemyAI;
     Collider collider;
-    
-    
+    GameObject player;
+    NavMeshAgent nav;
+
+
+
     void Start()
     {
         //bsa = FindObjectOfType<BlacksmithAnimation>();
-        enemyAI = GetComponent<EnemyAI>();
+        //enemyAI = GetComponent<EnemyAI>();
         collider = GetComponent<Collider>();
+        nav = GetComponent<NavMeshAgent>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -22,12 +27,20 @@ public class BlacksmithTrigger : MonoBehaviour {
         {
             Debug.Log("inside trigger player");
 
-            //GetComponent<Collider>().isTrigger = false;
             collider.enabled = false;
             enemyAI.enabled = false;
+            player = GameObject.Find("Blacksmith");
+            player.GetComponent<NavMeshAgent>().enabled = false;
+
+            
+            //nav.enabled = false;
+
+
 
             //blacksmithDialogue();
-            StartCoroutine(bsa.blacksmithAnimation());
+            //StartCoroutine(bsa.blacksmithAnimation());
+
+            bsa.idlStateAfterTriggerWithPlayer();
         }
     }
 }

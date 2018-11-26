@@ -70,6 +70,8 @@ public class BlacksmithAnimation : MonoBehaviour
 
         anim.SetBool("isWalking", false);
         yield return new WaitForSeconds(10);
+
+        Debug.Log("After wait for seconds");
         //anim.SetBool("isSweating", true);
         //yield return new WaitForSeconds(2);
         //anim.SetBool("isSweating", false);
@@ -80,30 +82,13 @@ public class BlacksmithAnimation : MonoBehaviour
 
     }
 
-}
-//public CharacterController2 bscript;
+    public void idlStateAfterTriggerWithPlayer()
+    {
+        anim.SetBool("isWalking", false);
+        Debug.Log("Walking FALSE");
+    }
 
-//void Start()
-//{
-//    ascript = GetComponent<CharacterController1>();
-//    bscript = GetComponent<CharacterController2>();
-//    ascript.enabled = true;
-//    bscript.enabled = false;
-//}
-//void Update()
-//{
-//    if (Input.GetKeyDown(KeyCode.Q))
-//    {
-//        if (ascript.enabled == true)
-//        {
-//            ascript.enabled = false;
-//            bscript.enabled = true;
-//        }
-//        else
-//        {
-//            ascript.enabled = true;
-//            bscript.enabled = false;
-//        }
-//    }
+}
+
 
 

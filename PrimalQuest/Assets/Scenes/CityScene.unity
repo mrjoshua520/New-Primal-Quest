@@ -16601,8 +16601,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313051318}
-  m_LocalRotation: {x: 0.009146146, y: 0.72172785, z: 0.009539384, w: -0.69205076}
-  m_LocalPosition: {x: -134.06435, y: 2.6808217, z: -88.00796}
+  m_LocalRotation: {x: 0.11322748, y: 0.72656894, z: 0.1234593, w: -0.6663594}
+  m_LocalPosition: {x: -58.65403, y: 9.70478, z: -72.66695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}
@@ -35937,7 +35937,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 964796194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.93, y: -0.0083, z: -0.46}
+  m_LocalPosition: {x: 1.472, y: -0.0083, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418272375}
@@ -81772,7 +81772,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -81801,6 +81801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bsa: {fileID: 0}
+  enemyAI: {fileID: 0}
 --- !u!1 &1475202555
 GameObject:
   m_ObjectHideFlags: 0
@@ -112940,8 +112941,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075320576}
-  m_LocalRotation: {x: -0, y: 0.9980411, z: -0, w: 0.06256195}
-  m_LocalPosition: {x: -60.584267, y: 10.291044, z: -59.068096}
+  m_LocalRotation: {x: 0.034780182, y: 0.73398507, z: 0.037696343, w: -0.6772261}
+  m_LocalPosition: {x: -58.75032, y: 10.270858, z: -73.18197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}
@@ -113069,6 +113070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bsa: {fileID: 1470635193}
+  enemyAI: {fileID: 1470635191}
 --- !u!135 &2077598644
 SphereCollider:
   m_ObjectHideFlags: 0
