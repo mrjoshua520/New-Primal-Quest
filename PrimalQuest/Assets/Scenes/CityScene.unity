@@ -81658,8 +81658,6 @@ GameObject:
   - component: {fileID: 1470635191}
   - component: {fileID: 1470635192}
   - component: {fileID: 1470635193}
-  - component: {fileID: 1470635197}
-  - component: {fileID: 1470635198}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Untagged
@@ -81776,32 +81774,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!136 &1470635197
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1470635190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 2
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1470635198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1470635190}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32ba24d9f20d364e8cc5af4f17e3e04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bsa: {fileID: 0}
-  enemyAI: {fileID: 0}
 --- !u!1 &1475202555
 GameObject:
   m_ObjectHideFlags: 0
@@ -112941,8 +112913,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075320576}
-  m_LocalRotation: {x: 0.034780182, y: 0.73398507, z: 0.037696343, w: -0.6772261}
-  m_LocalPosition: {x: -58.75032, y: 10.270858, z: -73.18197}
+  m_LocalRotation: {x: -0, y: 0.9980411, z: -0, w: 0.06256195}
+  m_LocalPosition: {x: -60.584267, y: 10.291044, z: -59.068096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}
@@ -113069,8 +113041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ba24d9f20d364e8cc5af4f17e3e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bsa: {fileID: 1470635193}
-  enemyAI: {fileID: 1470635191}
+  bsd: {fileID: 1470635193}
 --- !u!135 &2077598644
 SphereCollider:
   m_ObjectHideFlags: 0

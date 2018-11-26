@@ -5,11 +5,11 @@ using UnityEngine.AI;
 
 public class BlacksmithTrigger : MonoBehaviour {
 
-    public BlacksmithAnimation bsa;
-    public EnemyAI enemyAI;
+    public BlacksmithDialogue bsd;
+    //public EnemyAI enemyAI;
     Collider collider;
-    GameObject player;
-    NavMeshAgent nav;
+    //GameObject player;
+    //NavMeshAgent nav;
 
 
 
@@ -18,7 +18,7 @@ public class BlacksmithTrigger : MonoBehaviour {
         //bsa = FindObjectOfType<BlacksmithAnimation>();
         //enemyAI = GetComponent<EnemyAI>();
         collider = GetComponent<Collider>();
-        nav = GetComponent<NavMeshAgent>();
+        //nav = GetComponent<NavMeshAgent>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -28,19 +28,25 @@ public class BlacksmithTrigger : MonoBehaviour {
             Debug.Log("inside trigger player");
 
             collider.enabled = false;
-            enemyAI.enabled = false;
-            player = GameObject.Find("Blacksmith");
-            player.GetComponent<NavMeshAgent>().enabled = false;
+            //enemyAI.wander = false;
+            //enemyAI.enabled = false;
+            //player = GameObject.Find("Blacksmith");
+            //player.GetComponent<NavMeshAgent>().enabled = false;
 
-            
+
+
             //nav.enabled = false;
+
+            bsd.disableMovementAndSetUpForDialogue();
 
 
 
             //blacksmithDialogue();
-            //StartCoroutine(bsa.blacksmithAnimation());
+            //StartCoroutine(bsd.blacksmithAnimation());
 
-            bsa.idlStateAfterTriggerWithPlayer();
+            //bsa.idlStateAfterTriggerWithPlayer();
+
+            //bsa.blacksmithDialogue();
         }
     }
 }

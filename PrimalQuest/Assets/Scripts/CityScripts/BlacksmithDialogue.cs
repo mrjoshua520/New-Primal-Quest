@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class BlacksmithAnimation : MonoBehaviour
+public class BlacksmithDialogue: MonoBehaviour
 {
-
-    //BlacksmithAnimation bsa;
     EnemyAI enemyAI;
+    NavMeshAgent navmesh;
+
 
     GameObject player;
     Animator anim;
@@ -16,8 +17,8 @@ public class BlacksmithAnimation : MonoBehaviour
 
     void Start()
     {
-        //bsa = FindObjectOfType<BlacksmithAnimation>();
         enemyAI = GetComponent<EnemyAI>();
+        navmesh = GetComponent<NavMeshAgent>();
 
         anim = GetComponent<Animator>();
         text = GameObject.Find("HUD");
@@ -25,31 +26,23 @@ public class BlacksmithAnimation : MonoBehaviour
 
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        Debug.Log("inside trigger player");
-
-    //        GetComponent<Collider>().isTrigger = false;
-
-    //        //blacksmithDialogue();
-    //        StartCoroutine(bsa.blacksmithAnimation());
-    //    }
-    //}
-
-
-    public void blacksmithDialogue()
+    public void disableMovementAndSetUpForDialogue()
     {
-        Debug.Log("inside blacksmith dialogue");
         enemyAI.enabled = false;
+        navmesh.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
 
-        Debug.Log("After look at");
-
         anim.SetBool("isWalking", false);
+
+    }
+
+    public void blacksmithDialogue()
+    {
+        Debug.Log("inside blacksmith dialogue");
+        
+        pHUD.Dialogue("Blacksmith", "This is a test");
     }
 
 
@@ -58,7 +51,7 @@ public class BlacksmithAnimation : MonoBehaviour
         //enemyAI.enabled = false;
         Debug.Log("inside animation");
 
-        //pHUD.Dialogue("Blacksmith", "This is a test");
+        pHUD.Dialogue("Blacksmith", "This is a test");
 
         Debug.Log("After dialogue");
 
