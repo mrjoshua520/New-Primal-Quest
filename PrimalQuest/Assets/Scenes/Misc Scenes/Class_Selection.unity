@@ -17125,9 +17125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a60fb4599306d449983e37fbaa1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caveButton: {fileID: 0}
-  forestButton: {fileID: 0}
-  IslandButton: {fileID: 0}
+  caveButton: {fileID: 2124740263}
+  forestButton: {fileID: 1386219101}
+  IslandButton: {fileID: 11982635}
 --- !u!143 &676034536
 CharacterController:
   m_ObjectHideFlags: 0
@@ -27648,9 +27648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a60fb4599306d449983e37fbaa1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caveButton: {fileID: 0}
-  forestButton: {fileID: 0}
-  IslandButton: {fileID: 0}
+  caveButton: {fileID: 1393730142}
+  forestButton: {fileID: 764970633}
+  IslandButton: {fileID: 1890546223}
 --- !u!143 &789493761
 CharacterController:
   m_ObjectHideFlags: 0
@@ -32650,9 +32650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a60fb4599306d449983e37fbaa1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caveButton: {fileID: 0}
-  forestButton: {fileID: 0}
-  IslandButton: {fileID: 0}
+  caveButton: {fileID: 174052111}
+  forestButton: {fileID: 1959167920}
+  IslandButton: {fileID: 1155940669}
 --- !u!143 &1284472918
 CharacterController:
   m_ObjectHideFlags: 0
