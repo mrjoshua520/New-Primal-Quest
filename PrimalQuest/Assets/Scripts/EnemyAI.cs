@@ -40,16 +40,11 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wander == false)
+        if (wander == false && walkSetPath == false)
         {
             agent.isStopped = true;
             anim.SetBool("isWalking", false);
         }
-        else if(wander == true)
-        {
-            agent.isStopped = false;
-        }
-
 
         //DeductHealth(1);
       
