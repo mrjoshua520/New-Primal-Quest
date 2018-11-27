@@ -31,7 +31,7 @@ public class BlacksmithDialogue: MonoBehaviour
     public void disableMovementAndSetUpForDialogue()
     {
         Debug.Log("inside disable movement");
-        enemyAI.enabled = false;
+        enemyAI.wander = false;
         //navmesh.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -61,7 +61,7 @@ public class BlacksmithDialogue: MonoBehaviour
     void enableMovement()
     {
         Debug.Log("in enable movement");
-        enemyAI.enabled = true;
+        enemyAI.wander = true;
         navmesh.enabled = true;
 
         Debug.Log("After enable movement");
@@ -77,7 +77,7 @@ public class BlacksmithDialogue: MonoBehaviour
 
         if (firstTime)
         {
-            //pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
+            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
             Debug.Log("After dialogue");
             yield return new WaitForSeconds(10);
             Debug.Log("After wait for seconds");

@@ -36,10 +36,21 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponent<Animator>();
         agent.stoppingDistance = stopDistance;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
+        if (wander == false)
+        {
+            agent.isStopped = true;
+            anim.SetBool("isWalking", false);
+        }
+        else if(wander == true)
+        {
+            agent.isStopped = false;
+        }
+
+
         //DeductHealth(1);
       
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
