@@ -84,7 +84,15 @@ public class FinalBossAITest : MonoBehaviour
 
     public void Attack()
     {
-        //Normal Attack
+        wander = false;
+        agent.speed = 0;
+        SetTarget(agent, anim, player);
+        ChangeAnimation("Attack");
+
+        if (!recentlyAttacked)
+        {
+            StartCoroutine(DamagePlayerBasic(damage));
+        }
     }
 
     public void WhipAttack()
@@ -93,12 +101,48 @@ public class FinalBossAITest : MonoBehaviour
         agent.speed = 0;
         SetTarget(agent, anim, player);
         ChangeAnimation("whipAttack");
-        //Drag Closer
+
+        if (!recentlyAttacked)
+        {
+            StartCoroutine(DamagePlayerWhip(5f));
+        }
     }
 
-    public void DoDamage()
+    IEnumerator DamagePlayerBasic(float damageAttack)
     {
-        playerStats.DeductHealth(damage);
+        recentlyAttacked = true;
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 4))
+        {
+            if (hit.transform.CompareTag("Player"))
+            {
+                playerStats.DeductHealth(damageAttack);
+                yield return new WaitForSeconds(1);
+            }
+        }
+        yield return new WaitForSeconds(.5f);
+        recentlyAttacked = false;
+    }
+
+    IEnumerator DamagePlayerWhip(float damageAttack)
+    {
+        recentlyAttacked = true;
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 12))
+        {
+            if (hit.transform.CompareTag("Player"))
+            {
+                playerStats.DeductHealth(damageAttack);
+                //Drag Closer
+                yield return new WaitForSeconds(1);
+            }
+        }
+        yield return new WaitForSeconds(.5f);
+        recentlyAttacked = false;
     }
 
     public void DeductHealth(int _damage)
