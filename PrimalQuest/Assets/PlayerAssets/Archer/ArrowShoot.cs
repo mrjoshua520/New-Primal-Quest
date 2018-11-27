@@ -10,6 +10,7 @@ public class ArrowShoot : MonoBehaviour {
     Camera camera;
     float range = 50f;
     EnemyAI enemy;
+    FinalBossAITest Demon;
     Stats stat;
 
     public GameObject arrowPrefab;
@@ -59,6 +60,11 @@ public class ArrowShoot : MonoBehaviour {
             {
                 enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Demon")
+            {
+                Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
+                Demon.DeductHealth(stat.GetDamage());
             }
         }
     }

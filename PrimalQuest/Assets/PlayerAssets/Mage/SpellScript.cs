@@ -10,6 +10,7 @@ public class SpellScript : MonoBehaviour
     Camera camera;
     float range = 25f;
     EnemyAI enemy;
+    FinalBossAITest Demon;
     Stats stat;
 
     private void Start()
@@ -57,6 +58,11 @@ public class SpellScript : MonoBehaviour
             {
                 enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Demon")
+            {
+                Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
+                Demon.DeductHealth(stat.GetDamage());
             }
         }
     }

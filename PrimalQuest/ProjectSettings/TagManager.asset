@@ -10,6 +10,7 @@ TagManager:
   - Generic
   - Enemy
   - TownAI
+  - Demon
   layers:
   - Default
   - TransparentFX

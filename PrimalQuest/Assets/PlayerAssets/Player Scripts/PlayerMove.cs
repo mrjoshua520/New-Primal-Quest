@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameObject caveButton;
+    public GameObject forestButton;
+    public GameObject IslandButton;
+
     [HideInInspector]
     public Stats player;
     CharacterController charControl;
@@ -46,12 +50,28 @@ public class PlayerMove : MonoBehaviour
         charControl.Move(move * Time.deltaTime);
     }
 
+    public void ActivateCave()
+    {
+        caveButton.SetActive(true);
+    }
+
+    public void ActivateForest()
+    {
+        forestButton.SetActive(true);
+    }
+
+    public void ActivateIsland()
+    {
+        IslandButton.SetActive(true);
+    }
+
     void TestingSpell()
     {
         if (Input.GetButtonDown("Fire2"))
         {
             player.ChangeJump(30f);
             player.ChangeSpeed(30f);
+            player.ChangeDamage(100);
         }
     }
 

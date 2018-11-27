@@ -22,21 +22,7 @@ public class PlayerHUD : MonoBehaviour {
 	void Update ()
     {
         DisplayHealth();
-        Test();
 	}
-
-    void Test()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            Dialogue("Blacksmith", "Why hello there friend. This is a lovely test!!!");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Dialogue("None", "Why hello there mortal. This is a lovely test!!!");
-        }
-    }
 
     void DisplayHealth()
     {

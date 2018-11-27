@@ -2748,8 +2748,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 220261692}
-  m_LocalRotation: {x: -0.06272271, y: 0.8451542, z: 0.52098656, w: 0.101750806}
-  m_LocalPosition: {x: 172.5906, y: 174.17413, z: 42.524063}
+  m_LocalRotation: {x: -0.018876033, y: 0.9384756, z: 0.34089094, w: 0.051967055}
+  m_LocalPosition: {x: 169.52155, y: 227.94507, z: 5.6559906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 397019823}
@@ -11311,7 +11311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 140824, guid: 7acd807f6e407054eabe771d7b19dafd, type: 2}
       propertyPath: m_TagString
-      value: Enemy
+      value: Demon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11198244, guid: 7acd807f6e407054eabe771d7b19dafd, type: 2}

@@ -11,6 +11,7 @@ public class SwordScript : MonoBehaviour {
     Camera camera;
     float range = 3f;
     EnemyAI enemy;
+    FinalBossAITest Demon;
     Stats stat;
 
 
@@ -59,6 +60,11 @@ public class SwordScript : MonoBehaviour {
             {
                 enemy = hitInformation.collider.gameObject.GetComponent<EnemyAI>();
                 enemy.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Demon")
+            {
+                Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
+                Demon.DeductHealth(stat.GetDamage());
             }
         }
     }
