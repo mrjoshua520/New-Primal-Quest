@@ -19,6 +19,8 @@ public class AlchemyTrigger : MonoBehaviour {
         {
             Debug.Log("Player inside alchemy shop");
             collider.enabled = false;
+            ALDI.setUp();
+            ALDI.dialogue();
 
         }
     }
