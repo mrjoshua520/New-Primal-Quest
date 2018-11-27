@@ -7,12 +7,14 @@ public class BlacksmithDialogue: MonoBehaviour
 {
     EnemyAI enemyAI;
     NavMeshAgent navmesh;
+    public BlacksmithTrigger bst;
 
 
     GameObject player;
     Animator anim;
     GameObject text;
     PlayerHUD pHUD;
+    bool firstTime = true;
 
 
     void Start()
@@ -28,51 +30,65 @@ public class BlacksmithDialogue: MonoBehaviour
 
     public void disableMovementAndSetUpForDialogue()
     {
+        Debug.Log("inside disable movement");
         enemyAI.enabled = false;
-        navmesh.enabled = false;
+        //navmesh.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
 
         anim.SetBool("isWalking", false);
 
+        //blacksmithDialogue();
+        StartCoroutine(blacksmithAnimation());
     }
 
-    public void blacksmithDialogue()
+    void blacksmithDialogue()
     {
         Debug.Log("inside blacksmith dialogue");
-        
-        pHUD.Dialogue("Blacksmith", "This is a test");
+
+        if (firstTime)
+        {
+            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
+
+            enableMovement();
+        }
+
+       
+    }
+
+
+    void enableMovement()
+    {
+        Debug.Log("in enable movement");
+        enemyAI.enabled = true;
+        navmesh.enabled = true;
+
+        Debug.Log("After enable movement");
+
+        StartCoroutine(bst.turnOnCollider());
     }
 
 
     public IEnumerator blacksmithAnimation()
     {
-        //enemyAI.enabled = false;
-        Debug.Log("inside animation");
 
-        pHUD.Dialogue("Blacksmith", "This is a test");
+        Debug.Log("inside blacksmith animation");
 
-        Debug.Log("After dialogue");
+        if (firstTime)
+        {
+            //pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
+            Debug.Log("After dialogue");
+            yield return new WaitForSeconds(10);
+            Debug.Log("After wait for seconds");
+            enableMovement();
+        }
 
+       //nim.SetBool("isWalking", false);
+       // yield return new WaitForSeconds(10);
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.LookAt(player.transform);
-
-        Debug.Log("After look at");
-
-        anim.SetBool("isWalking", false);
-        yield return new WaitForSeconds(10);
-
-        Debug.Log("After wait for seconds");
-        //anim.SetBool("isSweating", true);
-        //yield return new WaitForSeconds(2);
-        //anim.SetBool("isSweating", false);
-        //yield return new WaitForSeconds(7);
-        //anim.SetBool("isWorking", false);
-
-        //bst.onTriggerBlSm = true;
-
+        
+       
     }
 
     public void idlStateAfterTriggerWithPlayer()
