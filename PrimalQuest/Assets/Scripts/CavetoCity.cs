@@ -8,23 +8,17 @@ public class CavetoCity : MonoBehaviour
 
     GameObject player;
     Vector3 loadpos;
-    GameObject PGUI;
-    Transition trans;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             player = GameObject.FindWithTag("Player");
-            PGUI = GameObject.Find("Transition");
-            trans = PGUI.GetComponent<Transition>();
 
-            trans.FadeOut();
             DontDestroyOnLoad(player);
             SceneManager.LoadScene(1);
             loadpos = new Vector3(305f, 20f, 34f);
             player.transform.position = loadpos;
-            trans.FadeIn();
         }
     }
 }

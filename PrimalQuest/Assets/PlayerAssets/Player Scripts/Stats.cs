@@ -23,6 +23,11 @@ public class Stats
     static int numOfPlants = 0;
     //====================================
 
+    static GameObject log;
+    static QuestLog quest;
+
+    
+
     public void SetStatsArcher()
     {
         TotalHP = 125f;
@@ -55,20 +60,21 @@ public class Stats
 
     public bool PlantPickup()
     {
+        log = GameObject.Find("QuestLog");
+        quest = log.GetComponent<QuestLog>();
+
         if (!Forest)
         {
             numOfPlants++;
 
-            if (numOfPlants == 9)
+            if (numOfPlants >= 9)
             {
                 Forest = true;
-                //Debug.Log("Quest Complete");
+                quest.ForestComplete();
             }
 
             return Forest;
-            //Just have it display the GUI here
         }
-        //have do nothing
         return false;
     }
 

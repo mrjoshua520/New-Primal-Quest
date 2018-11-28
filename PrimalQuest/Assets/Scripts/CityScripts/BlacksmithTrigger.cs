@@ -6,10 +6,14 @@ using UnityEngine.AI;
 public class BlacksmithTrigger : MonoBehaviour {
 
     public BlacksmithDialogue bsd;
+    GameObject log;
+    QuestLog quest;
     Collider collider;
     
     void Start()
     {
+        log = GameObject.Find("QuestLog");
+        quest = log.GetComponent<QuestLog>();
         collider = GetComponent<Collider>();
     }
 
@@ -17,6 +21,7 @@ public class BlacksmithTrigger : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            quest.ActivateCave(); //This activates the quest in the quest log
             Debug.Log("inside trigger player");
 
             collider.enabled = false;

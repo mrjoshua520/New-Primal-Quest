@@ -15,17 +15,10 @@ public class Look : MonoBehaviour
     Vector3 targetRotBody;
 
     float xAxisClamp = 0;
-
-    // Use this for initialization
-    void Start ()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         RotateCamera();
     }
 

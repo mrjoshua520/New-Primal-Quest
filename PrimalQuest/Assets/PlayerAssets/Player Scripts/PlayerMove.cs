@@ -1,15 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Temp
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
-    public GameObject caveButton;
-    public GameObject forestButton;
-    public GameObject IslandButton;
-
     [HideInInspector]
     public Stats player;
     CharacterController charControl;
@@ -48,21 +45,6 @@ public class PlayerMove : MonoBehaviour
         move.y -= gravity * Time.deltaTime;
 
         charControl.Move(move * Time.deltaTime);
-    }
-
-    public void ActivateCave()
-    {
-        caveButton.SetActive(true);
-    }
-
-    public void ActivateForest()
-    {
-        forestButton.SetActive(true);
-    }
-
-    public void ActivateIsland()
-    {
-        IslandButton.SetActive(true);
     }
 
     void TestingSpell()

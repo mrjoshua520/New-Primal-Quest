@@ -8,6 +8,8 @@ public class BossAI : MonoBehaviour
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
+    GameObject log; //These both are for the quest log
+    QuestLog quest;//----^
     //PlayerMove playerStats;
     DeleteThisScript playerStats;
     bool wander = true;
@@ -36,6 +38,8 @@ public class BossAI : MonoBehaviour
         playerStats = player.GetComponent <DeleteThisScript>(); //remove this and uncomment the other parts to work with actual player not test player
         anim = GetComponent<Animator>();
         agent.stoppingDistance = stopDistance;
+        log = GameObject.Find("QuestLog");
+        quest = log.GetComponent<QuestLog>();
     }
 	
 	// Update is called once per frame
@@ -135,6 +139,7 @@ public class BossAI : MonoBehaviour
         agent.isStopped = true;
         ChangeAnimation("isDead");
         Destroy(gameObject, 5f);
+        quest.CaveComplete();
     }
     private void OnDrawGizmos()
     {

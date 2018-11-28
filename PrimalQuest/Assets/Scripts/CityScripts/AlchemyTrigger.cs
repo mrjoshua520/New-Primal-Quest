@@ -6,13 +6,13 @@ public class AlchemyTrigger : MonoBehaviour {
 
     public AlchemyDialo ALDI;
     Collider collider;
-    GameObject player;
-    PlayerMove quest;
+    GameObject log;
+    QuestLog quest;
 
 	void Start ()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        quest = player.GetComponent<PlayerMove>();
+        log = GameObject.Find("QuestLog");
+        quest = log.GetComponent<QuestLog>();
         collider = GetComponent<Collider>();
 
 	}

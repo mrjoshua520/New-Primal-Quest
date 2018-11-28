@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class QuestLog : MonoBehaviour
 {
@@ -11,6 +13,11 @@ public class QuestLog : MonoBehaviour
     public GameObject forest;
     public GameObject cave;
     public GameObject island;
+    public GameObject caveButton;
+    public GameObject forestButton;
+    public GameObject IslandButton;
+    public Image isFDone;
+    public Image isCDone;
 
     private void Update()
     {
@@ -44,5 +51,34 @@ public class QuestLog : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    public void ActivateCave()
+    {
+        caveButton.SetActive(true);
+    }
+
+    public void ActivateForest()
+    {
+        forestButton.SetActive(true);
+    }
+
+    public void ActivateIsland()
+    {
+        IslandButton.SetActive(true);
+    }
+
+    public void CaveComplete()
+    {
+        isCDone.fillCenter = true;
+    }
+
+    public void ForestComplete()
+    {
+        isFDone.fillCenter = true;
     }
 }

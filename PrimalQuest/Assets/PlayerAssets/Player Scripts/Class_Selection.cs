@@ -9,11 +9,16 @@ public class Class_Selection : MonoBehaviour
     public GameObject mage;
     public GameObject archer;
     public GameObject warrior;
+    public GameObject fadePanel;
+    Animator anim;
     Stats stat;
     Vector3 loadpos;
     static string Class;
-    GameObject PGUI;
-    Transition trans;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void Archer()
     {
@@ -24,15 +29,8 @@ public class Class_Selection : MonoBehaviour
         stat = new Stats();
         stat.SetStatsArcher();
         player = GameObject.Find("Archer");
-        PGUI = GameObject.Find("Transition");
-        trans = PGUI.GetComponent<Transition>();
 
-        trans.FadeOut();
-        DontDestroyOnLoad(player);
-        SceneManager.LoadScene(1);
-        loadpos = new Vector3(120f, 18f, 1f);
-        player.transform.position = loadpos;
-        trans.FadeIn();
+        StartCoroutine(Transition());
     }
 
     public void Mage()
@@ -44,15 +42,8 @@ public class Class_Selection : MonoBehaviour
         stat = new Stats();
         stat.SetStatsMage();
         player = GameObject.Find("Mage");
-        PGUI = GameObject.Find("Transition");
-        trans = PGUI.GetComponent<Transition>();
 
-        trans.FadeOut();
-        DontDestroyOnLoad(player);
-        SceneManager.LoadScene(1);
-        loadpos = new Vector3(120f, 18f, 1f);
-        player.transform.position = loadpos;
-        trans.FadeIn();
+        StartCoroutine(Transition());
     }
 
     public void Warrior()
@@ -64,15 +55,20 @@ public class Class_Selection : MonoBehaviour
         stat = new Stats();
         stat.SetStatsWarrior();
         player = GameObject.Find("Warrior");
-        PGUI = GameObject.Find("Transition");
-        trans = PGUI.GetComponent<Transition>();
 
-        trans.FadeOut();
+        StartCoroutine(Transition());
+    }
+
+    IEnumerator Transition()
+    {
+        fadePanel.SetActive(true);
+        yield return new WaitForSeconds(.3f);
+        anim.SetBool("fade", true);
+        yield return new WaitForSeconds(2);
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(1);
         loadpos = new Vector3(120f, 18f, 1f);
         player.transform.position = loadpos;
-        trans.FadeIn();
     }
 
     public string setClass()
