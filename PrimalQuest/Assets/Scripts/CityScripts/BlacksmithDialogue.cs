@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class BlacksmithDialogue: MonoBehaviour
 {
     EnemyAI enemyAI;
-    NavMeshAgent navmesh;
+    //NavMeshAgent navmesh;
     public BlacksmithTrigger bst;
 
 
@@ -14,13 +14,18 @@ public class BlacksmithDialogue: MonoBehaviour
     Animator anim;
     GameObject text;
     PlayerHUD pHUD;
+
+    PlayerHUD talkingBool;
     bool firstTime = true;
 
 
     void Start()
     {
         enemyAI = GetComponent<EnemyAI>();
-        navmesh = GetComponent<NavMeshAgent>();
+        //navmesh = GetComponent<NavMeshAgent>();
+
+        //ScriptName targetScript = targetObj.GetComponent<ScriptName>();
+        //talkingBool = GetComponent<PlayerHUD>();
 
         anim = GetComponent<Animator>();
         text = GameObject.Find("HUD");
@@ -49,12 +54,17 @@ public class BlacksmithDialogue: MonoBehaviour
 
         if (firstTime)
         {
-            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
-
+            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, my daughter got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
+            Debug.Log("After dialogue in blacksmith Dialogue");
+            //while (talkingBool.isTalking)
+            //{
+            //    anim.SetBool("isWalking", false);
+            //    //Debug.Log("Inside while statement");
+            //}
+            //Debug.Log("Outside while statement");
+            firstTime = false;
             enableMovement();
         }
-
-       
     }
 
 
@@ -62,7 +72,7 @@ public class BlacksmithDialogue: MonoBehaviour
     {
         Debug.Log("in enable movement");
         enemyAI.wander = true;
-        navmesh.enabled = true;
+        //navmesh.enabled = true;
 
         Debug.Log("After enable movement");
 
@@ -72,31 +82,21 @@ public class BlacksmithDialogue: MonoBehaviour
 
     public IEnumerator blacksmithAnimation()
     {
-
         Debug.Log("inside blacksmith animation");
 
         if (firstTime)
         {
             pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
             Debug.Log("After dialogue");
+
             yield return new WaitForSeconds(10);
             Debug.Log("After wait for seconds");
+            firstTime = false;
             enableMovement();
         }
+        Debug.Log("after if first time");
 
-       //nim.SetBool("isWalking", false);
-       // yield return new WaitForSeconds(10);
-
-        
-       
     }
-
-    public void idlStateAfterTriggerWithPlayer()
-    {
-        anim.SetBool("isWalking", false);
-        Debug.Log("Walking FALSE");
-    }
-
 }
 
 

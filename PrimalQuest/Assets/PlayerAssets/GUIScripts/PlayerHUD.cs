@@ -11,6 +11,7 @@ public class PlayerHUD : MonoBehaviour {
     public GameObject panel;
     public TextMeshProUGUI dialogue;
     public TextMeshProUGUI HP;
+    public bool isTalking;
 
 	// Use this for initialization
 	void Start ()
@@ -50,6 +51,8 @@ public class PlayerHUD : MonoBehaviour {
     IEnumerator Display(string speaker, string text, int speakerLength, int textLength)
     {
         char dispText;
+        isTalking = true;
+        Debug.Log("Inside Display");
 
         panel.SetActive(true);
 
@@ -77,6 +80,8 @@ public class PlayerHUD : MonoBehaviour {
 
         yield return new WaitForSeconds(5);
         dialogue.text = "";
+        isTalking = false;
+        Debug.Log("Inside Display after isTalking = false");
         panel.SetActive(false);
     }
 
