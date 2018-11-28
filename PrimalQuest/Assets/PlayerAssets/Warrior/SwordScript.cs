@@ -12,6 +12,7 @@ public class SwordScript : MonoBehaviour {
     float range = 3f;
     EnemyAI enemy;
     FinalBossAITest Demon;
+    BossAI Troll;
     Stats stat;
 
 
@@ -65,6 +66,11 @@ public class SwordScript : MonoBehaviour {
             {
                 Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
                 Demon.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Troll")
+            {
+                Troll = hitInformation.collider.gameObject.GetComponent<BossAI>();
+                Troll.DeductHealth(stat.GetDamage());
             }
         }
     }

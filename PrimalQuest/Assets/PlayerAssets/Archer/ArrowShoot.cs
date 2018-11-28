@@ -11,6 +11,7 @@ public class ArrowShoot : MonoBehaviour {
     float range = 50f;
     EnemyAI enemy;
     FinalBossAITest Demon;
+    BossAI Troll;
     Stats stat;
 
     public GameObject arrowPrefab;
@@ -65,6 +66,11 @@ public class ArrowShoot : MonoBehaviour {
             {
                 Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
                 Demon.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Troll")
+            {
+                Troll = hitInformation.collider.gameObject.GetComponent<BossAI>();
+                Troll.DeductHealth(stat.GetDamage());
             }
         }
     }

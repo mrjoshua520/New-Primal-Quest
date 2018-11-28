@@ -11,6 +11,7 @@ public class SpellScript : MonoBehaviour
     float range = 25f;
     EnemyAI enemy;
     FinalBossAITest Demon;
+    BossAI Troll;
     Stats stat;
 
     private void Start()
@@ -63,6 +64,11 @@ public class SpellScript : MonoBehaviour
             {
                 Demon = hitInformation.collider.gameObject.GetComponent<FinalBossAITest>();
                 Demon.DeductHealth(stat.GetDamage());
+            }
+            else if (targetHit == "Troll")
+            {
+                Troll = hitInformation.collider.gameObject.GetComponent<BossAI>();
+                Troll.DeductHealth(stat.GetDamage());
             }
         }
     }
