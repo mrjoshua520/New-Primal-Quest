@@ -2132,7 +2132,7 @@ MonoBehaviour:
   health: 20
   damage: 5
   detectionRange: 20
-  stopDistance: 1.5
+  stopDistance: 2
   timetoPause: 0
   offset: {x: 0, y: -1, z: 0}
   walkSetPath: 0

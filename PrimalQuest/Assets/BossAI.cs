@@ -8,13 +8,14 @@ public class BossAI : MonoBehaviour
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
-    Animation doorAnimation;
+    Animator doorAnim;
     GameObject log; //These both are for the quest log
     QuestLog quest;//----^
     PlayerMove playerStats;
     bool wander = true;
     bool recentlyAttacked;
     bool charging = false;
+    bool alive = true;
     float distanceToPlayer;
     float proximty = 8;
 
@@ -40,48 +41,51 @@ public class BossAI : MonoBehaviour
         agent.stoppingDistance = stopDistance;
         log = GameObject.Find("QuestLog");
         quest = log.GetComponent<QuestLog>();
-        doorAnimation = hostageDoor.GetComponent<Animation>();
+        doorAnim = hostageDoor.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!movement.isWaiting)
+        if (alive)
         {
-            if (wander)
+            if (!movement.isWaiting)
             {
-                StartCoroutine(movement.Wander(agent, anim, stopDistance, timeToPause));
+                if (wander)
+                {
+                    StartCoroutine(movement.Wander(agent, anim, stopDistance, timeToPause));
+                }
             }
-        }
 
-        if(!wander)
-        {
-            transform.LookAt(player.transform.position - Vector3.up);
-            movement.SetTarget(agent, anim, player);
-        }
+            if (!wander)
+            {
+                transform.LookAt(player.transform.position - Vector3.up);
+                movement.SetTarget(agent, anim, player);
+            }
 
-        distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
-       
-       if(distanceToPlayer <= detectionRange && distanceToPlayer >= proximty)
-       {
-           Charge();
-       }
 
-       if (distanceToPlayer <= proximty - 4 && charging)
-       {
-            ChangeAnimation("useRunningAttack");
-            StartCoroutine(ComboAttack());
-       }
+            if (distanceToPlayer <= detectionRange && distanceToPlayer >= proximty)
+            {
+                Charge();
+            }
 
-       if (distanceToPlayer <= stopDistance && !charging)
-       {
-            Attack();
-       }
+            if (distanceToPlayer <= proximty - 4 && charging)
+            {
+                ChangeAnimation("useRunningAttack");
+                StartCoroutine(ComboAttack());
+            }
 
-       if (distanceToPlayer >= stopDistance && distanceToPlayer <= proximty && !charging)
-        {
-            Follow();
+            if (distanceToPlayer <= stopDistance && !charging)
+            {
+                Attack();
+            }
+
+            if (distanceToPlayer >= stopDistance && distanceToPlayer <= proximty && !charging)
+            {
+                Follow();
+            }
         }
     }
 
@@ -137,11 +141,13 @@ public class BossAI : MonoBehaviour
 
     void Die()
     {
-        doorAnimation.Play();
+        alive = false;
+        doorAnim.SetBool("open", true);
         agent.isStopped = true;
-        ChangeAnimation("isDead");
-        Destroy(gameObject, 7f);
+        anim.SetBool("isDead", true);      
         quest.CaveComplete();
+
+        Destroy(gameObject, 7f);
     }
     private void OnDrawGizmos()
     {
