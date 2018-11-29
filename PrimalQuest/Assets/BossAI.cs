@@ -8,6 +8,7 @@ public class BossAI : MonoBehaviour
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
+    Animation doorAnimation;
     GameObject log; //These both are for the quest log
     QuestLog quest;//----^
     PlayerMove playerStats;
@@ -27,6 +28,7 @@ public class BossAI : MonoBehaviour
     public float timeToPause = 3;
 
     public BossMovement movement;
+    public GameObject hostageDoor;
 
 	// Use this for initialization
 	void Start ()
@@ -38,6 +40,7 @@ public class BossAI : MonoBehaviour
         agent.stoppingDistance = stopDistance;
         log = GameObject.Find("QuestLog");
         quest = log.GetComponent<QuestLog>();
+        doorAnimation = hostageDoor.GetComponent<Animation>();
     }
 	
 	// Update is called once per frame
@@ -134,6 +137,7 @@ public class BossAI : MonoBehaviour
 
     void Die()
     {
+        doorAnimation.Play();
         agent.isStopped = true;
         ChangeAnimation("isDead");
         Destroy(gameObject, 7f);
