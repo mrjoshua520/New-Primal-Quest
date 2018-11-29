@@ -28826,7 +28826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cf4431ea40258429caae2ba1046dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2
+  mouseSensitivity: 4
   PlayerBody: {fileID: 676034534}
 --- !u!81 &1010397816
 AudioListener:
@@ -29147,7 +29147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cf4431ea40258429caae2ba1046dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2
+  mouseSensitivity: 4
   PlayerBody: {fileID: 1284472922}
 --- !u!81 &1061646100
 AudioListener:
@@ -43586,7 +43586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cf4431ea40258429caae2ba1046dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 2
+  mouseSensitivity: 4
   PlayerBody: {fileID: 789493765}
 --- !u!81 &2037162649
 AudioListener:

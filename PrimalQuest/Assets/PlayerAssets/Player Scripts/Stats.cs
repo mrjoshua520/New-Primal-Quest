@@ -114,10 +114,15 @@ public class Stats
 
         tempHP -= HP;
 
-        if (tempHP <= 0)
+        if (tempHP <= 0 && !potion)
         {
             CurrentHP = 0;
             SceneManager.LoadScene(6);
+        }
+        else if (tempHP <= 0 && potion)
+        {
+            CurrentHP = TotalHP;
+            potion = false;
         }
         else
         {
