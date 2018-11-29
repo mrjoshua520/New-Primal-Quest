@@ -10,8 +10,7 @@ public class BossAI : MonoBehaviour
     Animator anim;
     GameObject log; //These both are for the quest log
     QuestLog quest;//----^
-    //PlayerMove playerStats;
-    DeleteThisScript playerStats;
+    PlayerMove playerStats;
     bool wander = true;
     bool recentlyAttacked;
     bool charging = false;
@@ -34,8 +33,7 @@ public class BossAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        //playerStats = player.GetComponent<PlayerMove>();
-        playerStats = player.GetComponent <DeleteThisScript>(); //remove this and uncomment the other parts to work with actual player not test player
+        playerStats = player.GetComponent<PlayerMove>();
         anim = GetComponent<Animator>();
         agent.stoppingDistance = stopDistance;
         log = GameObject.Find("QuestLog");
@@ -119,7 +117,7 @@ public class BossAI : MonoBehaviour
 
     public void DoDamage()
     {
-        playerStats.Damage(damage);
+        playerStats.player.DeductHealth(damage);
     }
 
     public void DeductHealth(int _damage)

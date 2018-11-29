@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     Animator anim;
     PlayerMove playerStats;
     bool recentlyAttacked;
+    bool alive = true;
 
     [Header("Enemy Stats")]
     public int health = 50;
@@ -40,51 +41,54 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wander == false && walkSetPath == false)
+        if (alive)
         {
-            agent.isStopped = true;
-            anim.SetBool("isWalking", false);
-        }
-
-        //DeductHealth(1);
-
-        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-
-        if (willChasePlayer)
-        {
-            if (distanceToPlayer <= detectionRange)
+            if (wander == false && walkSetPath == false)
             {
-                wander = false;
-                walkSetPath = false;
-                npcMovement.SetTarget(agent, anim, player);
-                detectionRange = Mathf.Infinity;
+                agent.isStopped = true;
+                anim.SetBool("isWalking", false);
+            }
 
-                if(distanceToPlayer <= stopDistance)
+            //DeductHealth(1);
+
+            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+
+            if (willChasePlayer)
+            {
+                if (distanceToPlayer <= detectionRange)
                 {
-                    Attack();
+                    wander = false;
+                    walkSetPath = false;
+                    npcMovement.SetTarget(agent, anim, player);
+                    detectionRange = Mathf.Infinity;
+
+                    if (distanceToPlayer <= stopDistance)
+                    {
+                        Attack();
+                    }
+                    else if (distanceToPlayer > stopDistance)
+                    {
+                        anim.SetBool("isAttacking", false);
+                    }
                 }
-                else if(distanceToPlayer > stopDistance)
+            }
+
+            if (!npcMovement.isWaiting)
+            {
+                if (walkSetPath && !wander)
                 {
-                    anim.SetBool("isAttacking", false);
+                    StartCoroutine(npcMovement.SetPath(agent, anim, stopDistance, timetoPause));
                 }
-            }
-        }
 
-        if (!npcMovement.isWaiting)
-        {
-            if (walkSetPath && !wander)
-            {
-               StartCoroutine(npcMovement.SetPath(agent, anim, stopDistance, timetoPause));
-            }
+                else if (wander && !walkSetPath)
+                {
+                    StartCoroutine(npcMovement.Wander(agent, anim, stopDistance, timetoPause));
+                }
 
-            else if (wander && !walkSetPath)
-            {
-                StartCoroutine(npcMovement.Wander(agent, anim, stopDistance, timetoPause));
-            }
-
-            else if (wander && walkSetPath)
-            {
-                Debug.LogError("Please check either walksetpath or wander you cannot check both;");
+                else if (wander && walkSetPath)
+                {
+                    Debug.LogError("Please check either walksetpath or wander you cannot check both;");
+                }
             }
         }
     }
@@ -133,6 +137,7 @@ public class EnemyAI : MonoBehaviour
 
     void Die()
     {
+        alive = false;
         agent.isStopped = true;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5f);
