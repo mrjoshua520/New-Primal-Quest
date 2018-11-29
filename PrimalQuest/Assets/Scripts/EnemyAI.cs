@@ -98,7 +98,7 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isAttacking", true);
         transform.LookAt(player.transform.position + offset);
 
-        if(!recentlyAttacked)
+        if(!recentlyAttacked && alive)
         {
             StartCoroutine(DamagePlayer());
         }       
