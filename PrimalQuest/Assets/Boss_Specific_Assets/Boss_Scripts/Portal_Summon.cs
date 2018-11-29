@@ -32,7 +32,7 @@ public class Portal_Summon : MonoBehaviour {
 
         DontDestroyOnLoad(Player);
         SceneManager.LoadScene(5);
-        loadpos = new Vector3(97f, 106f, 171f);
+        loadpos = new Vector3(97f, 72f, 171f);
         Player.transform.position = loadpos;
     }
 }

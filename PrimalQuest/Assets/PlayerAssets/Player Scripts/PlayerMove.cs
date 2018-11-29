@@ -64,11 +64,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetButtonDown("Fire3"))
         {
-            player1 = GameObject.FindWithTag("Player");
-            DontDestroyOnLoad(player1);
-            SceneManager.LoadScene(5);
-            loadpos = new Vector3(97f, 106f, 171f);
-            player1.transform.position = loadpos;
+            player.testCom();
         }
     }
 }

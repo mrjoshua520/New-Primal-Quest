@@ -52033,7 +52033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522e8ce57dcaa094e836b759f2d58ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ALDI: {fileID: 0}
+  ALDI: {fileID: 1888718241}
 --- !u!135 &1200287225
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -113026,8 +113026,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075320576}
-  m_LocalRotation: {x: 0.019849457, y: 0.96019924, z: 0.07072666, w: -0.26948315}
-  m_LocalPosition: {x: -60.118797, y: 10.451781, z: -70.87422}
+  m_LocalRotation: {x: -0.09061909, y: 0.8643608, z: 0.16841517, w: 0.46508592}
+  m_LocalPosition: {x: -80.63732, y: -2.6836245, z: -51.78741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 228531986}

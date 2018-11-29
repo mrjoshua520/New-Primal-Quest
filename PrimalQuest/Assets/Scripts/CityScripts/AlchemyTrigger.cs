@@ -9,33 +9,37 @@ public class AlchemyTrigger : MonoBehaviour {
     Collider collider;
     GameObject log;
     QuestLog quest;
+    Stats Stat;
 
 	void Start ()
     {
         log = GameObject.Find("QuestLog");
         quest = log.GetComponent<QuestLog>();
         collider = GetComponent<Collider>();
-
+        Stat = new Stats();
 	}
 	
 	
     void OnTriggerEnter(Collider trigger)
     {
-        if(trigger.tag == "Player")
+        bool complete = Stat.GetForest();
+        if(trigger.tag == "Player" && !complete)
         {
             Debug.Log("Player inside alchemy shop");
             quest.ActivateForest(); //Enables the button for this quest in the quest log
             collider.enabled = false;
             ALDI.setUp();
-            //ALDI.dialogue();
-
+        }
+        else if (complete)
+        {
+            ALDI.potionGive();
         }
     }
 
 
-    public IEnumerator turnOnCollider()
+    public void turnOnCollider()
     {
-        yield return new WaitForSeconds(10);
+        Debug.Log("Collider on");
         collider.enabled = true;
     }
 }

@@ -23,6 +23,13 @@ public class Stats
     static int numOfPlants = 0;
     //====================================
 
+    //===============Spec================
+    static bool weaponUpgrade = false;
+    static bool potion = false;
+    static bool DraksBlessing = false;
+    static bool UarasBlessing = false;
+    //===================================
+
     static GameObject log;
     static QuestLog quest;
 
@@ -157,5 +164,43 @@ public class Stats
     public string GetHPPerc()
     {
         return CurrentHP + " / " + TotalHP;
+    }
+
+    public bool GetForest()
+    {
+        return Forest;
+    }
+
+    public bool GetCave()
+    {
+        return Cave;
+    }
+
+    public void SetSpec(int x)
+    {
+        if (x == 1)
+        {
+            potion = true;
+        }
+        else if (x == 2)
+        {
+            weaponUpgrade = true;
+        }
+        else if (x == 3)
+        {
+            DraksBlessing = true;
+            UarasBlessing = false;
+        }
+        else if (x == 4)
+        {
+            DraksBlessing = false;
+            UarasBlessing = true;
+        }
+    }
+
+    public void testCom()
+    {
+        Cave = true;
+        Forest = true;
     }
 }
