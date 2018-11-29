@@ -6,30 +6,24 @@ using UnityEngine.AI;
 public class BlacksmithDialogue: MonoBehaviour
 {
     EnemyAI enemyAI;
-    //NavMeshAgent navmesh;
     public BlacksmithTrigger bst;
-
-
     GameObject player;
     Animator anim;
     GameObject text;
     PlayerHUD pHUD;
+    Stats stats;
 
-    PlayerHUD talkingBool;
-    bool firstTime = true;
+    string firstTimeDialogue = "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. A fellow villager just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!";
+    string villagerSavedDialogue = "Thank you for saving the villager!";
 
 
     void Start()
     {
         enemyAI = GetComponent<EnemyAI>();
-        //navmesh = GetComponent<NavMeshAgent>();
-
-        //ScriptName targetScript = targetObj.GetComponent<ScriptName>();
-        //talkingBool = GetComponent<PlayerHUD>();
-
         anim = GetComponent<Animator>();
         text = GameObject.Find("HUD");
         pHUD = text.GetComponent<PlayerHUD>();
+        stats = new Stats();
 
     }
 
@@ -37,32 +31,34 @@ public class BlacksmithDialogue: MonoBehaviour
     {
         Debug.Log("inside disable movement");
         enemyAI.wander = false;
-        //navmesh.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
 
         anim.SetBool("isWalking", false);
 
-        //blacksmithDialogue();
         StartCoroutine(blacksmithAnimation());
     }
 
-    void blacksmithDialogue()
+    public IEnumerator blacksmithAnimation()
     {
-        Debug.Log("inside blacksmith dialogue");
+        Debug.Log("inside blacksmith animation");
+        bool complete = stats.GetCave();
 
-        if (firstTime)
+        if (!complete)
         {
-            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, my daughter got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
-            Debug.Log("After dialogue in blacksmith Dialogue");
-            //while (talkingBool.isTalking)
-            //{
-            //    anim.SetBool("isWalking", false);
-            //    //Debug.Log("Inside while statement");
-            //}
-            //Debug.Log("Outside while statement");
-            firstTime = false;
+            pHUD.Dialogue("Blacksmith", firstTimeDialogue);
+            Debug.Log("After dialogue");
+
+            yield return new WaitForSeconds(30);
+            Debug.Log("After wait for seconds");
+    
+            enableMovement();
+        }
+        else if (complete)
+        {
+            pHUD.Dialogue("Blacksmith", villagerSavedDialogue);
+            yield return new WaitForSeconds(15);
             enableMovement();
         }
     }
@@ -80,23 +76,7 @@ public class BlacksmithDialogue: MonoBehaviour
     }
 
 
-    public IEnumerator blacksmithAnimation()
-    {
-        Debug.Log("inside blacksmith animation");
-
-        if (firstTime)
-        {
-            pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. My daughter just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
-            Debug.Log("After dialogue");
-
-            yield return new WaitForSeconds(10);
-            Debug.Log("After wait for seconds");
-            firstTime = false;
-            enableMovement();
-        }
-        Debug.Log("after if first time");
-
-    }
+   
 }
 
 
