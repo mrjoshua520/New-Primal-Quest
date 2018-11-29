@@ -32,7 +32,8 @@ public class AlchemyTrigger : MonoBehaviour {
         }
     }
 
-    public IEunmerator turnOnCollider()
+
+    public IEnumerator turnOnCollider()
     {
         yield return new WaitForSeconds(10);
         collider.enabled = true;

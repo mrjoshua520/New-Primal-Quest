@@ -33,7 +33,7 @@ public class AlchemyDialo : MonoBehaviour {
         transform.LookAt(player.transform);
 
         anim.SetBool("isWalking", false);
-        StartCoroutine(alchemyAnimation());
+        //StartCoroutine(alchemyAnimation());
         //dialogue();
         
     }
@@ -44,7 +44,7 @@ public class AlchemyDialo : MonoBehaviour {
         pHUD.Dialogue("Alchemist", "Hello there! If you're looking for a health potion I am sorry but I am sold out. Could you go to the forest and get the nine plants I need for more health potions. Theres a free potion if you help me. ");
     }
 
-    public IEnumerable alchemyAnimation()
+    IEnumerable alchemyAnimation()
     {
         Debug.Log("inside blacksmith animation");
 

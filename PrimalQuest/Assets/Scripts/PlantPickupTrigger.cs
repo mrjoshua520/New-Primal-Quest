@@ -21,7 +21,7 @@ public class PlantPickupTrigger : MonoBehaviour {
     {
         if(collider.tag == "Player")
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Collect"))
             {
                 Debug.Log("E key pressed");
                 Destroy(gameObject);
