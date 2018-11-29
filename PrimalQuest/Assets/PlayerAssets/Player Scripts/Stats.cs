@@ -34,7 +34,7 @@ public class Stats
         CurrentHP = TotalHP;
         Defense = 2f;
         speed = 10f;
-        jump = 7f;
+        jump = 0f;
         damage = 10;
     }
 
@@ -44,7 +44,7 @@ public class Stats
         CurrentHP = TotalHP;
         Defense = 0f;
         speed = 7f;
-        jump = 5f;
+        jump = 0f;
         damage = 12;
     }
 
@@ -54,7 +54,7 @@ public class Stats
         CurrentHP = TotalHP;
         Defense = 5f;
         speed = 5f;
-        jump = 3f;
+        jump = 0f;
         damage = 10;
     }
 
