@@ -17,10 +17,12 @@ public class NPCMovement
     {
         anim.SetBool("isWalking", true);
         agent.SetDestination(target.transform.position);
+        agent.isStopped = false;
     }
  
     public IEnumerator SetPath(NavMeshAgent agent, Animator anim, float turnDistance, float waitTime)
     {
+        agent.isStopped = false;
         anim.SetBool("isWalking", true);
 
         if (Vector3.Distance(waypoints[currentDestination].transform.position, agent.transform.position) <= turnDistance)
@@ -45,6 +47,7 @@ public class NPCMovement
 
     public IEnumerator Wander(NavMeshAgent agent, Animator anim, float turnDistance, float waitTime)
     {
+        agent.isStopped = false;
         anim.SetBool("isWalking", true);
 
         if (Vector3.Distance(waypoints[currentDestination].transform.position, agent.transform.position) <= turnDistance)

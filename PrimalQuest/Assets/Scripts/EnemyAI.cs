@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         //DeductHealth(1);
-      
+
         float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
 
         if (willChasePlayer)
