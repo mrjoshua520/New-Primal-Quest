@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AlchemyTrigger : MonoBehaviour {
 
@@ -26,8 +27,14 @@ public class AlchemyTrigger : MonoBehaviour {
             quest.ActivateForest(); //Enables the button for this quest in the quest log
             collider.enabled = false;
             ALDI.setUp();
-            ALDI.dialogue();
+            //ALDI.dialogue();
 
         }
+    }
+
+    public IEunmerator turnOnCollider()
+    {
+        yield return new WaitForSeconds(10);
+        collider.enabled = true;
     }
 }
