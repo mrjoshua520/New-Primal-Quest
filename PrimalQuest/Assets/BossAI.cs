@@ -136,7 +136,7 @@ public class BossAI : MonoBehaviour
     {
         agent.isStopped = true;
         ChangeAnimation("isDead");
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 7f);
         quest.CaveComplete();
     }
     private void OnDrawGizmos()
