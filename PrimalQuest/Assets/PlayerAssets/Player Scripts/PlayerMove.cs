@@ -25,7 +25,6 @@ public class PlayerMove : MonoBehaviour
     {
         MovePlayer();
         TestingSpell();
-        TempToIsland();
     }
 
     void MovePlayer()
@@ -54,17 +53,6 @@ public class PlayerMove : MonoBehaviour
             player.ChangeJump(30f);
             player.ChangeSpeed(30f);
             player.ChangeDamage(100);
-        }
-    }
-
-    void TempToIsland()
-    {
-        GameObject player1;
-        Vector3 loadpos;
-
-        if (Input.GetButtonDown("Fire3"))
-        {
-            player.testCom();
         }
     }
 }

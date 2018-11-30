@@ -181,6 +181,12 @@ public class Stats
         return Cave;
     }
 
+    public void doneCave()
+    {
+        Cave = true;
+        quest.CaveComplete();
+    }
+
     public void SetSpec(int x)
     {
         if (x == 1)
@@ -201,11 +207,5 @@ public class Stats
             DraksBlessing = false;
             UarasBlessing = true;
         }
-    }
-
-    public void testCom()
-    {
-        Cave = true;
-        Forest = true;
     }
 }

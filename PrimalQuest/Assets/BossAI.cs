@@ -12,6 +12,7 @@ public class BossAI : MonoBehaviour
     GameObject log; //These both are for the quest log
     QuestLog quest;//----^
     PlayerMove playerStats;
+    Stats questStat;
     bool wander = true;
     bool recentlyAttacked;
     bool charging = false;
@@ -42,6 +43,7 @@ public class BossAI : MonoBehaviour
         log = GameObject.Find("QuestLog");
         quest = log.GetComponent<QuestLog>();
         doorAnim = hostageDoor.GetComponent<Animator>();
+        questStat = new Stats();
     }
 	
 	// Update is called once per frame
@@ -145,7 +147,7 @@ public class BossAI : MonoBehaviour
         doorAnim.SetBool("open", true);
         agent.isStopped = true;
         anim.SetBool("isDead", true);      
-        quest.CaveComplete();
+        questStat.doneCave();
 
         Destroy(gameObject, 7f);
     }
