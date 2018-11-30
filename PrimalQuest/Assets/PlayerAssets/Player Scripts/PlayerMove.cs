@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     {
         MovePlayer();
         TestingSpell();
+        TEMPREADY();
     }
 
     void MovePlayer()
@@ -53,6 +54,14 @@ public class PlayerMove : MonoBehaviour
             player.ChangeJump(30f);
             player.ChangeSpeed(30f);
             player.ChangeDamage(100);
+        }
+    }
+
+    void TEMPREADY()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            player.READYTEMP();
         }
     }
 }

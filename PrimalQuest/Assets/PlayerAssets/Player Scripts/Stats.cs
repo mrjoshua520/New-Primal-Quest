@@ -28,6 +28,8 @@ public class Stats
     static bool potion = false;
     static bool DraksBlessing = false;
     static bool UarasBlessing = false;
+
+    static bool potionGotten = false;
     //===================================
 
     static GameObject log;
@@ -181,10 +183,31 @@ public class Stats
         return Cave;
     }
 
+    public bool ready()
+    {
+        if (weaponUpgrade && potionGotten)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void doneCave()
     {
         Cave = true;
         quest.CaveComplete();
+    }
+
+    public void READYTEMP()
+    {
+        Cave = true;
+        Forest = true;
+        weaponUpgrade = true;
+        potion = true;
+        potionGotten = true;
     }
 
     public void SetSpec(int x)
@@ -192,6 +215,7 @@ public class Stats
         if (x == 1)
         {
             potion = true;
+            potionGotten = true;
         }
         else if (x == 2)
         {
