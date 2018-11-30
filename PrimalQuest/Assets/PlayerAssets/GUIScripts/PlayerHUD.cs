@@ -60,22 +60,22 @@ public class PlayerHUD : MonoBehaviour {
         {
             dispText = speaker[i];
             dialogue.text += "" + dispText.ToString();
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(.01f);
         }
 
         dialogue.text += ":";
 
-        yield return new WaitForSeconds(.05f);
+        yield return new WaitForSeconds(.01f);
 
         dialogue.text += " ";
 
-        yield return new WaitForSeconds(.05f);
+        yield return new WaitForSeconds(.01f);
 
         for (int i = 0; i < textLength; i++)
         {
             dispText = text[i];
             dialogue.text += "" + dispText.ToString();
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(.01f);
         }
 
         yield return new WaitForSeconds(5);

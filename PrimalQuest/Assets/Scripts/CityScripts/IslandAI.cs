@@ -12,9 +12,10 @@ public class IslandAI : MonoBehaviour
     float distanceToPlayer;
     Animator anim;
     public GameObject waitPoint;
+    public IslandNPCTrigger Trigger;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
@@ -33,7 +34,7 @@ public class IslandAI : MonoBehaviour
             if (transform.position == waitPoint.transform.position)
             {
                 anim.SetBool("isWalking", false);
-                transform.LookAt(player.transform);
+                Trigger.second = true;
             }
             else
             {
