@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
         {
             player.ChangeJump(30f);
             player.ChangeSpeed(30f);
-            player.ChangeDamage(100);
+            player.ChangeDamage(50);
         }
     }
 
