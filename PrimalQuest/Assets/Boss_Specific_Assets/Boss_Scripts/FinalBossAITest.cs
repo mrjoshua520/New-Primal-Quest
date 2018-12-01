@@ -233,7 +233,7 @@ public class FinalBossAITest : MonoBehaviour
                         if (afterburst)
                         {
                             ChangeAnimation("isFlight");
-                            if (done2)
+                            if (true)
                             {
                                 StartCoroutine(flyland(landing));
 
@@ -290,7 +290,7 @@ public class FinalBossAITest : MonoBehaviour
 
         if (!recentlyAttacked)
         {
-            StartCoroutine(DamagePlayerWhip(5f));
+            StartCoroutine(DamagePlayerWhip(10f));
         }
     }
 
@@ -338,11 +338,11 @@ public class FinalBossAITest : MonoBehaviour
 
         Debug.Log(health);
 
-        if (health <= 100 && !didstage2)
+        if (health <= 200 && !didstage2)
         {
             stage2 = true;
         }
-        else if (health <= 50 && !didstage3)
+        else if (health <= 100 && !didstage3)
         {
             stage3 = true;
         }
