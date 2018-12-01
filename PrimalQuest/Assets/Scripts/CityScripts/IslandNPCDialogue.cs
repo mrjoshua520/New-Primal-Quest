@@ -47,7 +47,7 @@ public class IslandNPCDialogue : MonoBehaviour
     {
         if (firstTimeComp)
         {
-            pHUD.Dialogue("Strange Lady", "I thought you might show up. I'll cut right to the chase with this, some local priests have heard about strange portals opening up on the island. They want someone to go take care of it. Let's not waste any time, i'll take you to the island.");
+            pHUD.Dialogue("Strange Lady", "I thought you might show up. I'll cut right to the chase with this, some local priests have heard about strange portals opening up on the island. They want someone to go take care of it. Let's not waste any time, I'll take you to the island.");
             yield return new WaitForSeconds(7);
             firstTimeComp = false;
         }
