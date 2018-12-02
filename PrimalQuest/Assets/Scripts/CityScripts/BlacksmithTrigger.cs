@@ -9,7 +9,7 @@ public class BlacksmithTrigger : MonoBehaviour {
     GameObject log;
     QuestLog quest;
     Collider collider;
-    
+  
     void Start()
     {
         log = GameObject.Find("QuestLog");
@@ -25,7 +25,7 @@ public class BlacksmithTrigger : MonoBehaviour {
             Debug.Log("inside trigger player");
 
             collider.enabled = false;
-            
+
             bsd.disableMovementAndSetUpForDialogue();
         }
     }

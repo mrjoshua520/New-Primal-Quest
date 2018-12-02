@@ -14,7 +14,7 @@ public class BlacksmithDialogue: MonoBehaviour
     Stats stats;
 
     string firstTimeDialogue = "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. A fellow villager just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!";
-    string villagerSavedDialogue = "Thank you for saving the villager!";
+    string villagerSavedDialogue = "Thank you for saving the villager! I was working on a way to help you out. Here's my grandfather's old necklace. I don't need it much these days but it really helps you hit a little harder.";
 
 
     void Start()
@@ -58,6 +58,8 @@ public class BlacksmithDialogue: MonoBehaviour
         else if (complete)
         {
             pHUD.Dialogue("Blacksmith", villagerSavedDialogue);
+            stats.ChangeDamage(20);
+            stats.SetSpec(2);
             yield return new WaitForSeconds(15);
             enableMovement();
         }
