@@ -6,7 +6,8 @@ public class Shrine_Event : MonoBehaviour
 {
     public Material color;
     public GameObject light;
-
+    public GameObject Altar;
+ 
     private void OnTriggerEnter(Collider other)
     {
         light = GameObject.Find("IslandLight");
@@ -14,5 +15,7 @@ public class Shrine_Event : MonoBehaviour
         light.SetActive(false);
 
         RenderSettings.skybox = color;
+
+        Altar.SetActive(true);
     }
 }
