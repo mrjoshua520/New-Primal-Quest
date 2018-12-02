@@ -13,7 +13,7 @@ public class IslandNPCTrigger : MonoBehaviour
     Stats Stat;
     public bool second = false;
     Vector3 loadpos;
-
+    
     void Start()
     {
         log = GameObject.Find("QuestLog");
@@ -49,6 +49,7 @@ public class IslandNPCTrigger : MonoBehaviour
 
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(4);
+
         loadpos = new Vector3(210f, 10f, 567.5f);
         player.transform.position = loadpos;
     }

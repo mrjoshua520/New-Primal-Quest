@@ -5,13 +5,11 @@ using UnityEngine;
 public class Pentagram_Event : MonoBehaviour
 {
     Animator anim;
-    public GameObject light;
     public GameObject circle;
     public GameObject pentagram;
     public GameObject pillar1;
     public GameObject pillar2;
     public GameObject pillar3;
-    public Material color;
     bool triggered = false;
 
     private void Start()
@@ -30,10 +28,6 @@ public class Pentagram_Event : MonoBehaviour
     IEnumerator SpawnPortal()
     {
         pentagram.SetActive(true);
-
-        light.SetActive(false);
-
-        RenderSettings.skybox = color;
 
         yield return new WaitForSeconds(.5f);
 
