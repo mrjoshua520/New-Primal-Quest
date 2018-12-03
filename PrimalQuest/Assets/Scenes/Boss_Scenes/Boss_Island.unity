@@ -6871,6 +6871,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404918898}
+  - component: {fileID: 404918900}
+  - component: {fileID: 404918899}
   m_Layer: 0
   m_Name: AltartoUara
   m_TagString: Untagged
@@ -6896,6 +6898,29 @@ Transform:
   m_Father: {fileID: 436516353}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404918899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404918897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1500078ad760340479ff3d919d2bc3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &404918900
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404918897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: -85, y: 189, z: -31}
 --- !u!1 &407255602
 GameObject:
   m_ObjectHideFlags: 0
@@ -9563,6 +9588,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594115964}
+  - component: {fileID: 594115966}
+  - component: {fileID: 594115965}
   m_Layer: 0
   m_Name: AltartoDraksanth
   m_TagString: Untagged
@@ -9588,6 +9615,29 @@ Transform:
   m_Father: {fileID: 436516353}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594115965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594115963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694eded4e69b11d4d86ac03260834f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &594115966
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594115963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: -86, y: 189, z: -103}
 --- !u!1 &596848519
 GameObject:
   m_ObjectHideFlags: 0
@@ -19092,8 +19142,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1369877532}
-  m_LocalRotation: {x: -0.0154927075, y: 0.40398183, z: 0.0068437075, w: 0.9146102}
-  m_LocalPosition: {x: -105.97026, y: 6.835028, z: 25.170362}
+  m_LocalRotation: {x: -0.30309847, y: 0.6721552, z: 0.35416102, w: 0.57524663}
+  m_LocalPosition: {x: -108.682976, y: -64.95925, z: 23.439793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938415183}
