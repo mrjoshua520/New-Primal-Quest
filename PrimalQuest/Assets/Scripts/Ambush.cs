@@ -24,6 +24,7 @@ public class Ambush : MonoBehaviour
 
     IEnumerator Spawn()
         {
+            
             alreadyActivated = true;
             for (int i = 0; i < enemyCount; i++)
             {
@@ -33,6 +34,7 @@ public class Ambush : MonoBehaviour
                     Instantiate(enemyPrefab, spawnPoint2.transform.position, Quaternion.identity);
                 }
                 yield return new WaitForSeconds(spawnRate);
-            }         
-        }
+            }
+            FindObjectOfType<AudioManager>().Play("Goblin_Babbling");
+    }
 }

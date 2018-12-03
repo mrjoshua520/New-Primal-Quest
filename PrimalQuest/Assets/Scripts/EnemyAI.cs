@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("SoundFX")]
+    public string deathSound;
+
+
     NavMeshAgent agent;
     GameObject player;
     Animator anim;
@@ -137,7 +141,10 @@ public class EnemyAI : MonoBehaviour
 
     void Die()
     {
-        alive = false;
+        if (alive)
+            FindObjectOfType<AudioManager>().Play(deathSound);
+
+        alive = false;       
         agent.isStopped = true;
         anim.SetBool("isDead", true);
         Destroy(gameObject, 5f);

@@ -144,6 +144,8 @@ public class BossAI : MonoBehaviour
     void Die()
     {
         alive = false;
+        FindObjectOfType<AudioManager>().Play("Troll_Death");
+        FindObjectOfType<AudioManager>().Play("Cave_Door");
         doorAnim.SetBool("open", true);
         agent.isStopped = true;
         anim.SetBool("isDead", true);      

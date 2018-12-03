@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -40737,6 +40737,84 @@ MonoBehaviour:
     clip: {fileID: 0}
     volume: 0
     pitch: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_Babbling
+    clip: {fileID: 8300000, guid: 60e4eaf76bac72242a575d3ce6b014aa, type: 3}
+    volume: 0.5
+    pitch: 1.16
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_Death
+    clip: {fileID: 8300000, guid: 0827f86e77ac40647888e032a3ea0f72, type: 3}
+    volume: 0.5
+    pitch: 1.16
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_Yeah
+    clip: {fileID: 8300000, guid: 0a73f885757eee749bf2389fdc71e28b, type: 3}
+    volume: 0.38
+    pitch: 1.16
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_No
+    clip: {fileID: 8300000, guid: cccba5b7e34d8484b8fee9207dc3a139, type: 3}
+    volume: 0.35
+    pitch: 1.16
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_Laugh
+    clip: {fileID: 8300000, guid: a6bf1ad276952c442b4d93d5d2df02ea, type: 3}
+    volume: 0.5
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Goblin_Breathing
+    clip: {fileID: 8300000, guid: 6fc8ed0949667194b937efa40746062f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HobGoblin_Death
+    clip: {fileID: 8300000, guid: eb51405ec851d6c4a9d5a7459d0d2796, type: 3}
+    volume: 0.5
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: HobGoblin_Growl
+    clip: {fileID: 8300000, guid: ed10347795ddbe843be950649d85cb90, type: 3}
+    volume: 0.6
+    pitch: 0.35
+    loop: 0
+    source: {fileID: 0}
+  - name: Cave_Door
+    clip: {fileID: 8300000, guid: 0517505bc2347f34f96857be3f7b8aab, type: 3}
+    volume: 0.6
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: Troll_Growl
+    clip: {fileID: 8300000, guid: 5eb47680097668f4ca8f8a85260c5d47, type: 3}
+    volume: 0.6
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Troll_Death
+    clip: {fileID: 8300000, guid: 4b50af00aefa78b418ffaceb63da75c2, type: 3}
+    volume: 0.3
+    pitch: 0.3
+    loop: 0
+    source: {fileID: 0}
+  - name: Troll_Roar
+    clip: {fileID: 8300000, guid: 9782c00e0ffe64d45ad7dc6254883355, type: 3}
+    volume: 0.5
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Troll_Impact
+    clip: {fileID: 8300000, guid: fec427b0d1868d6459ed012b5f8ab066, type: 3}
+    volume: 0.3
+    pitch: 0.3
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1702481667

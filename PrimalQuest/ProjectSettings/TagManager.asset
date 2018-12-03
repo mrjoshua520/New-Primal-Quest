@@ -13,6 +13,7 @@ TagManager:
   - Demon
   - Fire
   - Troll
+  - Ground
   layers:
   - Default
   - TransparentFX
