@@ -13,6 +13,8 @@ public class Hostage : MonoBehaviour
     PlayerHUD pHUD;
     Stats stats;
     bool saved = false;
+    float distanceToVanish = 6f;
+    float distanceFromDest;
    
     public GameObject escapeWaypoint;
 
@@ -37,16 +39,23 @@ public class Hostage : MonoBehaviour
 
         //yield return new WaitForSeconds(1);
         //gameObject.SetActive(false);
-        Destroy(gameObject, 1);
+        //Destroy(gameObject, 1);
     }
        
     
     void Update ()
     {
+        distanceFromDest = Vector3.Distance(escapeWaypoint.transform.position, this.transform.position);
+
         if (saved == true)
         {
             anim.SetBool("isWalking", true);
             agent.SetDestination(escapeWaypoint.transform.position);
+
+            if(distanceFromDest <= distanceToVanish)
+            {
+                Destroy(this.gameObject);
+            }
         }
 	}
 }
