@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class VillagerDialogue : MonoBehaviour
 {
-
     EnemyAI enemyAI;
     public VillagerTrigger vt;
     GameObject player;
@@ -13,14 +12,11 @@ public class VillagerDialogue : MonoBehaviour
     GameObject text;
     PlayerHUD pHUD;
     Stats stats;
+    bool currentlyTalking = false; // need to fix
     bool talkedToKnight = false;
     bool talkedToKnight2 = false;
     bool talkedToKnight3 = false;
     bool talkedToArcher = false;
-
-    //The player was chosen by the thirteen gods to be their champion in the coming war with the Primordial Beast.In choosing them the gods set the player outside of the small town to begin their adventure in helping them.The player was chosen due to certain traits that they possessed
-
-
 
     void Start()
     {
@@ -34,7 +30,7 @@ public class VillagerDialogue : MonoBehaviour
 
     public void disableMovementAndSetUpForDialogue()
     {
-        if ((gameObject.name == "Knight" && !talkedToKnight) || (gameObject.name == "Knight2" && !talkedToKnight2) || (gameObject.name == "Knight3" && !talkedToKnight3) || (gameObject.name == "Archer" && !talkedToArcher))
+        if (!currentlyTalking && ((gameObject.name == "Knight" && !talkedToKnight) || (gameObject.name == "Knight2" && !talkedToKnight2) || (gameObject.name == "Knight3" && !talkedToKnight3) || (gameObject.name == "Archer" && !talkedToArcher)))
         {
             Debug.Log("inside disable movement");
             enemyAI.wander = false;
@@ -52,17 +48,18 @@ public class VillagerDialogue : MonoBehaviour
 
     public IEnumerator villagerDialogue()
     {
+        currentlyTalking = true;
         if (gameObject.name == "Knight")
         {
             pHUD.Dialogue("Wolfgang", "I've been looking for my brother, but I haven't seen him around. I'm getting worried something bad has happened to him. I can't leave my post, but can you talk to the blacksmith from me? He is good friends with him and might know something. ");
-            yield return new WaitForSeconds(13);
+            yield return new WaitForSeconds(23);
             talkedToKnight = true;
             enableMovement();
         }
         else if (gameObject.name == "Knight2")
         {
             pHUD.Dialogue("Percival", "Hey there. A few days ago, I had bought a health potion from the alchemy shop. If I hadn't bought it when I did, I wouldn't be alive right now. You should get some before she sells out!");
-            yield return new WaitForSeconds(25);
+            yield return new WaitForSeconds(13);
             talkedToKnight2 = true;
             enableMovement();
         }
@@ -80,6 +77,7 @@ public class VillagerDialogue : MonoBehaviour
             talkedToArcher = true;
             enableMovement();
         }
+        currentlyTalking = false;
     }
 
     void enableMovement()

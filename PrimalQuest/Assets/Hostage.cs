@@ -31,13 +31,15 @@ public class Hostage : MonoBehaviour
         transform.LookAt(player.transform);
 
         pHUD.Dialogue("Theobald", "Thank you for saving me from these beasts. They had me locked up here for hours and I had no way of escaping. I will be forever thankful. I gotta hurry back to town!"); 
-        yield return new WaitForSeconds(13);
+        yield return new WaitForSeconds(10);
         saved = true;
         stats.doneCave();
-        
-        //need to disable the hostage 
-       
+
+        //yield return new WaitForSeconds(1);
+        //gameObject.SetActive(false);
+        Destroy(gameObject, 1);
     }
+       
     
     void Update ()
     {
