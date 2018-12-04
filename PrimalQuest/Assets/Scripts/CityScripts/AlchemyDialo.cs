@@ -55,7 +55,7 @@ public class AlchemyDialo : MonoBehaviour {
     {
         Debug.Log("inside blacksmith animation");
 
-        if (firstTime)
+        if (firstTime && !VillagerDialogue.currentlyTalking)
         {
             pHUD.Dialogue("Alchemist", "Hello there! If you're looking for a health potion I am sorry but I am sold out. Could you go to the forest and get the nine plants I need for more health potions. Theres a free potion if you help me. ");
             Debug.Log("After dialogue");
@@ -74,7 +74,7 @@ public class AlchemyDialo : MonoBehaviour {
     {
         Debug.Log("inside blacksmith animation");
 
-        if (firstTimeComp)
+        if (firstTimeComp && !VillagerDialogue.currentlyTalking)
         {
             pHUD.Dialogue("Alchemist", "Ah, the plants. With these I can get back to work making potions for Kreton. Here's the free one I promised you. Make sure to put it to good use.");
             Stat.SetSpec(1); //Gives the player the potion

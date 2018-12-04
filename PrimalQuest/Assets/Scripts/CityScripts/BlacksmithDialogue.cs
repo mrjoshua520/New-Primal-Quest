@@ -42,7 +42,7 @@ public class BlacksmithDialogue: MonoBehaviour
         Debug.Log("inside blacksmith animation");
         bool complete = stats.GetCave();
 
-        if (!complete && !endOfDialogue)
+        if (!complete && !endOfDialogue && !VillagerDialogue.currentlyTalking)
         {
             pHUD.Dialogue("Blacksmith", "Oh hey there, I'm sorry I can't sell you anything right now, I'm too busy with something. A fellow villager just got taken by a group of goblins. I heard from the guards that they were held up in the cave not too far from here. I'm too old to be fighting goblins, please help me!");
             Debug.Log("After dialogue");
@@ -52,7 +52,7 @@ public class BlacksmithDialogue: MonoBehaviour
     
             enableMovement();
         }
-        else if (complete && !endOfDialogue)
+        else if (complete && !endOfDialogue && !VillagerDialogue.currentlyTalking)
         {
             pHUD.Dialogue("Blacksmith", "Thank you for saving the villager! I was working on a way to help you out. Here's my grandfather's old necklace. I don't need it much these days but it really helps you hit a little harder.");
             endOfDialogue = true;

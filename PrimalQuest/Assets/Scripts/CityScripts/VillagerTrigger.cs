@@ -15,7 +15,7 @@ public class VillagerTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !VillagerDialogue.currentlyTalking)
         {
             Debug.Log("inside trigger player");
 

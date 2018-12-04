@@ -41,8 +41,7 @@ public class Hostage : MonoBehaviour
         //gameObject.SetActive(false);
         //Destroy(gameObject, 1);
     }
-       
-    
+        
     void Update ()
     {
         distanceFromDest = Vector3.Distance(escapeWaypoint.transform.position, this.transform.position);

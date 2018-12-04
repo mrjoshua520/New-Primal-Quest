@@ -12,7 +12,7 @@ public class VillagerDialogue : MonoBehaviour
     GameObject text;
     PlayerHUD pHUD;
     Stats stats;
-    bool currentlyTalking = false; // need to fix
+    public static bool currentlyTalking = false; // need to fix
     bool talkedToKnight = false;
     bool talkedToKnight2 = false;
     bool talkedToKnight3 = false;
@@ -26,6 +26,11 @@ public class VillagerDialogue : MonoBehaviour
         pHUD = text.GetComponent<PlayerHUD>();
         stats = new Stats();
 
+    }
+
+    private void Update()
+    {
+        Debug.Log(name + " " + currentlyTalking);
     }
 
     public void disableMovementAndSetUpForDialogue()
