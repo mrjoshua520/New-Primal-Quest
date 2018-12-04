@@ -20,6 +20,22 @@ public class Class_Selection : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Archer();
+        }
+        else if (Input.GetButtonDown("Fire3"))
+        {
+            Mage();
+        }
+        else if (Input.GetButtonDown("Collect"))
+        {
+            Warrior();
+        }
+    }
+
     public void Archer()
     {
         mage.SetActive(false);
@@ -74,5 +90,10 @@ public class Class_Selection : MonoBehaviour
     public string setClass()
     {
         return Class;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
