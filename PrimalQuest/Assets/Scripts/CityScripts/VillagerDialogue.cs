@@ -54,14 +54,14 @@ public class VillagerDialogue : MonoBehaviour
     {
         if (gameObject.name == "Knight")
         {
-            pHUD.Dialogue("Wolfgang", "Hey there. A few days ago, I had bought a health potion from the alchemy shop. If I hadn't bought it when I did, I wouldn't be alive right now. You should get some before she sells out!");
+            pHUD.Dialogue("Wolfgang", "I've been looking for my brother, but I haven't seen him around. I'm getting worried something bad has happened to him. I can't leave my post, but can you talk to the blacksmith from me? He is good friends with him and might know something. ");
             yield return new WaitForSeconds(13);
             talkedToKnight = true;
             enableMovement();
         }
         else if (gameObject.name == "Knight2")
         {
-            pHUD.Dialogue("Percival", "I've been looking for my fellow neigbor, but I haven't seen him around. I'm getting worried something bad has happened to him. I can't leave my post, but can you talk to the blacksmith from me? He is good friends with him and might know something. ");
+            pHUD.Dialogue("Percival", "Hey there. A few days ago, I had bought a health potion from the alchemy shop. If I hadn't bought it when I did, I wouldn't be alive right now. You should get some before she sells out!");
             yield return new WaitForSeconds(25);
             talkedToKnight2 = true;
             enableMovement();

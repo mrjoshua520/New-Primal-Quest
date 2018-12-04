@@ -7,8 +7,12 @@ public class Hostage : MonoBehaviour
 {
     NavMeshAgent agent;
     Animator anim;
-
-    public bool saved = false;
+    public HostageTrigger ht;
+    GameObject player;
+    GameObject text;
+    PlayerHUD pHUD;
+    Stats stats;
+    bool saved = false;
    
     public GameObject escapeWaypoint;
 
@@ -16,13 +20,30 @@ public class Hostage : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        text = GameObject.Find("HUD");
+        pHUD = text.GetComponent<PlayerHUD>();
+        stats = new Stats();
     }
 
-    // Update is called once per frame
+    public IEnumerator hostageDialogue()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        transform.LookAt(player.transform);
+
+        pHUD.Dialogue("Theobald", "Thank you for saving me from these beasts. They had me locked up here for hours and I had no way of escaping. I will be forever thankful. I gotta hurry back to town!"); 
+        yield return new WaitForSeconds(13);
+        saved = true;
+        stats.doneCave();
+        
+        //need to disable the hostage 
+       
+    }
+    
     void Update ()
     {
         if (saved == true)
         {
+            anim.SetBool("isWalking", true);
             agent.SetDestination(escapeWaypoint.transform.position);
         }
 	}

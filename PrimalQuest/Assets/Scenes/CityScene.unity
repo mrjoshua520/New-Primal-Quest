@@ -20629,6 +20629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
@@ -32146,6 +32147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
@@ -33300,6 +33302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
@@ -35575,7 +35578,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   INPCD: {fileID: 2107597922}
   second: 0
-  color: {fileID: 2100000, guid: e48f3126bafb0e24faebc83ab46e9c39, type: 2}
 --- !u!135 &942563957
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -43894,11 +43896,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1047387940}
   m_LocalRotation: {x: -0.13670604, y: 0.85035527, z: 0.27007475, w: 0.43042663}
-  m_LocalPosition: {x: -299.74722, y: 263.09723, z: -251.15771}
+  m_LocalPosition: {x: -258.74722, y: 263.79724, z: -198.15771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1587622671}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1047803369
 GameObject:
@@ -82477,6 +82479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 0
   detectionRange: 5
@@ -94469,6 +94472,8 @@ Transform:
   - {fileID: 418272375}
   - {fileID: 201453583}
   - {fileID: 872804463}
+  - {fileID: 1047387942}
+  - {fileID: 1987374464}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105584,6 +105589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
@@ -107272,6 +107278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
@@ -107983,12 +107990,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987374462}
-  m_LocalRotation: {x: -0.0062623005, y: 0.9851598, z: 0.16752481, w: 0.036829583}
-  m_LocalPosition: {x: 237.30237, y: -46.18283, z: 542.9248}
+  m_LocalRotation: {x: -0.10983201, y: 0.6853163, z: 0.10569758, w: 0.71211416}
+  m_LocalPosition: {x: 106.0163, y: -25.844193, z: 168.01149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1587622671}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1989812329
 GameObject:
@@ -114725,6 +114732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb3f6442f9404a9afbed2fe247f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: 
   health: 50
   damage: 10
   detectionRange: 5
