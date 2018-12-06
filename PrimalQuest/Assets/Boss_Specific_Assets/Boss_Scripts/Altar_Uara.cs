@@ -36,6 +36,8 @@ public class Altar_Uara : MonoBehaviour
             {
                 stat.SetSpec(4);
                 Active.SetActive(true);
+                stat.ChangeDefense(10);
+                stat.ChangeDamage(15);
             }
         }
     }

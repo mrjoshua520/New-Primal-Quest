@@ -36,6 +36,8 @@ public class Altar_Drak : MonoBehaviour
             {
                 stat.SetSpec(3);
                 Active.SetActive(true);
+                stat.ChangeDamage(30);
+                stat.ChangeDefense(3);
             }
         }
     }
