@@ -24,8 +24,6 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        TestingSpell();
-        TEMPREADY();
     }
 
     void MovePlayer()
@@ -45,23 +43,5 @@ public class PlayerMove : MonoBehaviour
         move.y -= gravity * Time.deltaTime;
 
         charControl.Move(move * Time.deltaTime);
-    }
-
-    void TestingSpell()
-    {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            player.ChangeJump(30f);
-            player.ChangeSpeed(30f);
-            player.ChangeDamage(50);
-        }
-    }
-
-    void TEMPREADY()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            player.READYTEMP();
-        }
     }
 }

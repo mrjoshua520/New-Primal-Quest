@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class FinalBossAITest : MonoBehaviour
 {
@@ -358,6 +359,7 @@ public class FinalBossAITest : MonoBehaviour
         agent.isStopped = true;
         ChangeAnimation("isDead");
         Destroy(gameObject, 5f);
+        SceneManager.LoadScene(7);
     }
 
     int ChoosePillar()

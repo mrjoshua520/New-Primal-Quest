@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Misc Scenes/Title_Screen.unity
+    path: 
     guid: daa38ad877523b74c9bab04317773ff0
   - enabled: 1
     path: Assets/Scenes/Misc Scenes/Class_Selection.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Misc Scenes/DeathScene.unity
     guid: f966594a8acdb9f43870f6adb387c242
+  - enabled: 1
+    path: Assets/Scenes/Misc Scenes/WinScreen.unity
+    guid: 61dcc408eca3eca44a347e82e9954557
   m_configObjects: {}

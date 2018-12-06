@@ -35,6 +35,6 @@ public class Portal_Summon : MonoBehaviour {
         loadpos = new Vector3(97f, 72f, 171f);
         Player.transform.position = loadpos;
         FindObjectOfType<AudioManager>().Stop("island_music");
-        FindObjectOfType<AudioManager>().Play("satirir_music");
+        FindObjectOfType<AudioManager>().Play("satiri_music");
     }
 }
