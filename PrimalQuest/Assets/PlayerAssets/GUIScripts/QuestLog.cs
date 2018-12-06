@@ -21,7 +21,7 @@ public class QuestLog : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) || Input.GetButtonDown("Quest"))
         {
             Time.timeScale = 0;
             if (!Displayed)
@@ -49,6 +49,36 @@ public class QuestLog : MonoBehaviour
 
         if (Displayed)
         {
+            if (Input.GetButtonDown("Jump"))
+            {
+                Displayed = true;
+                hud.SetActive(false);
+                main.SetActive(false);
+                panel.SetActive(true);
+                forest.SetActive(false);
+                cave.SetActive(true);
+                island.SetActive(false);
+            }
+            else if (Input.GetButtonDown("Fire3"))
+            {
+                Displayed = true;
+                hud.SetActive(false);
+                main.SetActive(false);
+                panel.SetActive(true);
+                forest.SetActive(true);
+                cave.SetActive(false);
+                island.SetActive(false);
+            }
+            else if (Input.GetButtonDown("Collect"))
+            {
+                Displayed = true;
+                hud.SetActive(false);
+                main.SetActive(false);
+                panel.SetActive(true);
+                forest.SetActive(false);
+                cave.SetActive(false);
+                island.SetActive(true);
+            }
             Cursor.lockState = CursorLockMode.None;
         }
         else
