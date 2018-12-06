@@ -8,6 +8,7 @@ public class CavetoCity : MonoBehaviour
 
     GameObject player;
     Vector3 loadpos;
+    public GameObject trans;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,10 +16,17 @@ public class CavetoCity : MonoBehaviour
         {
             player = GameObject.FindWithTag("Player");
 
-            DontDestroyOnLoad(player);
-            SceneManager.LoadScene(1);
-            loadpos = new Vector3(305f, 20f, 34f);
-            player.transform.position = loadpos;
+            StartCoroutine(Transition());
         }
+    }
+
+    IEnumerator Transition()
+    {
+        trans.SetActive(true);
+        yield return new WaitForSeconds(2);
+        DontDestroyOnLoad(player);
+        SceneManager.LoadScene(1);
+        loadpos = new Vector3(305f, 20f, 34f);
+        player.transform.position = loadpos;
     }
 }

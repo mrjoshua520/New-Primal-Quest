@@ -13,6 +13,7 @@ public class IslandNPCTrigger : MonoBehaviour
     Stats Stat;
     public bool second = false;
     Vector3 loadpos;
+    public GameObject trans;
     
     void Start()
     {
@@ -47,6 +48,8 @@ public class IslandNPCTrigger : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
+        trans.SetActive(true);
+        yield return new WaitForSeconds(2);
         DontDestroyOnLoad(player);
         SceneManager.LoadScene(4);
 

@@ -8,6 +8,7 @@ public class CitytoForest : MonoBehaviour
 
     GameObject player;
     Vector3 loadpos;
+    public GameObject trans;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,7 +22,8 @@ public class CitytoForest : MonoBehaviour
 
     IEnumerator Transition()
     {
-        yield return new WaitForSeconds(0);
+        trans.SetActive(true);
+        yield return new WaitForSeconds(2);
         DontDestroyOnLoad(player);
         loadpos = new Vector3(239f, 2f, 230f);
         player.transform.position = loadpos;
