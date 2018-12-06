@@ -85,6 +85,7 @@ public class Class_Selection : MonoBehaviour
         SceneManager.LoadScene(1);
         loadpos = new Vector3(120f, 18f, 1f);
         player.transform.position = loadpos;
+        FindObjectOfType<AudioManager>().Play("city_music");
     }
 
     public string setClass()

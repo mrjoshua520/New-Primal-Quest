@@ -28,5 +28,7 @@ public class CavetoCity : MonoBehaviour
         SceneManager.LoadScene(1);
         loadpos = new Vector3(305f, 20f, 34f);
         player.transform.position = loadpos;
+        FindObjectOfType<AudioManager>().Stop("cave_music");
+        FindObjectOfType<AudioManager>().Play("city_music");
     }
 }

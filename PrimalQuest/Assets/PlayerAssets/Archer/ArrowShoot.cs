@@ -38,6 +38,8 @@ public class ArrowShoot : MonoBehaviour {
     {
         anim.SetBool("isAttack", true);
 
+        FindObjectOfType<AudioManager>().Play("archer_sound");
+
         Damage();
 
         yield return new WaitForSeconds(.48f);

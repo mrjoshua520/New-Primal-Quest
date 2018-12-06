@@ -52652,10 +52652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: ThemeMusic
-    clip: {fileID: 0}
-    volume: 0
+    clip: {fileID: 8300000, guid: c3bc53ccc8c414d47af503459d973aba, type: 3}
+    volume: 0.15
     pitch: 0.1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Goblin_Babbling
     clip: {fileID: 8300000, guid: 60e4eaf76bac72242a575d3ce6b014aa, type: 3}
@@ -52752,6 +52752,48 @@ MonoBehaviour:
     volume: 0.3
     pitch: 1.5
     loop: 0
+    source: {fileID: 0}
+  - name: archer_sound
+    clip: {fileID: 8300000, guid: 8b6bed9308ea9a149a1651e230bf3624, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: warrior_sound
+    clip: {fileID: 8300000, guid: 9ded38039fb88b844a010da9d59f0f92, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: city_music
+    clip: {fileID: 8300000, guid: 441f8177ca17cdc4594a3bc171d07a8f, type: 3}
+    volume: 0.15
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: forest_music
+    clip: {fileID: 8300000, guid: a9d1e22566dfeb74483d5b93d9e44bd1, type: 3}
+    volume: 0.15
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: cave_music
+    clip: {fileID: 8300000, guid: 7bcaea1a05302ba498732061f41810bb, type: 3}
+    volume: 0.15
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: island_music
+    clip: {fileID: 8300000, guid: 8fb4d7e6b8fcf4f43b1090df1137e5f6, type: 3}
+    volume: 0.15
+    pitch: 1.5
+    loop: 1
+    source: {fileID: 0}
+  - name: satiri_music
+    clip: {fileID: 8300000, guid: cc35a948ace22834ea821a1062bd4243, type: 3}
+    volume: 0.15
+    pitch: 1.5
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &1702481667
 Transform:

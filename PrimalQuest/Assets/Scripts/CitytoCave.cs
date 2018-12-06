@@ -27,5 +27,7 @@ public class CitytoCave : MonoBehaviour
         SceneManager.LoadScene(3);
         loadpos = new Vector3(-78.5f, 1.5f, -108f);
         player.transform.position = loadpos;
+        FindObjectOfType<AudioManager>().Stop("city_music");
+        FindObjectOfType<AudioManager>().Play("cave_music");
     }
 }

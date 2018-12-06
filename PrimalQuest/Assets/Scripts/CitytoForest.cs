@@ -28,5 +28,7 @@ public class CitytoForest : MonoBehaviour
         loadpos = new Vector3(239f, 2f, 230f);
         player.transform.position = loadpos;
         SceneManager.LoadScene(2);
+        FindObjectOfType<AudioManager>().Stop("city_music");
+        FindObjectOfType<AudioManager>().Play("forest_music");
     }
 }

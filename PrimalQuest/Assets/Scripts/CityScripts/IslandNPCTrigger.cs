@@ -55,6 +55,8 @@ public class IslandNPCTrigger : MonoBehaviour
 
         loadpos = new Vector3(210f, 10f, 567.5f);
         player.transform.position = loadpos;
+        FindObjectOfType<AudioManager>().Stop("city_music");
+        FindObjectOfType<AudioManager>().Play("island_music");
     }
 
 

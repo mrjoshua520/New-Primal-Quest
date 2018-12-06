@@ -25,8 +25,7 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
-        //For when we have music to play in the background
-        //Play();
+        Play("title_theme");
     }
 	
 	public void Play(string name)
@@ -38,10 +37,14 @@ public class AudioManager : MonoBehaviour {
 
             return;
         }
-            
         s.source.Play();
     }
 
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Stop();
+    }
     // Add this line in the scripts we wanna call the audiomanager
     // FindObjectOfType<AudioManager>().Play("The name in audiomanager");
 }

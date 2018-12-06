@@ -38,6 +38,8 @@ public class SwordScript : MonoBehaviour {
     {
         anim.SetBool("isAttack", true);
 
+        FindObjectOfType<AudioManager>().Play("warrior_sound");
+
         Damage();
 
         yield return new WaitForSeconds(.40f);
